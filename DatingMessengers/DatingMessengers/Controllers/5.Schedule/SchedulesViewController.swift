@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  SchedulesViewController.swift
 //  DatingMessengers
 //
 //  Created by MBA0051 on 10/25/19.
@@ -8,16 +8,11 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class SchedulesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Welcome page"
-    }
-
-    @IBAction func goHomeButton(_ sender: UIButton) {
-        AppDelegate.shared.window?.rootViewController = TabbarViewController()
     }
 }
