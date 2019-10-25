@@ -15,6 +15,8 @@ final class Api {
         #elseif STG
             static let baseURL = "http://whoami.website/api/ios"
         #endif
+        
+        static let scheduleUrl = "/schedule"
     }
     
     struct Messages {}
