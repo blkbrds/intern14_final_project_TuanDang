@@ -1,16 +1,24 @@
 PODS:
+  - Alamofire (4.9.0)
+  - ObjectMapper (3.5.1)
   - SwiftUtils (4.2.1)
 
 DEPENDENCIES:
+  - Alamofire
+  - ObjectMapper
   - SwiftUtils
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - ObjectMapper
     - SwiftUtils
 
 SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   SwiftUtils: fa346feeac5a25eab7ea5d59f1857c6253cb8ab1
 
-PODFILE CHECKSUM: a6aeac520957b6109805dc07aa0704cb536aa57a
+PODFILE CHECKSUM: ab83e98a3c56891bb1c9d3787ae23503aa5d0e3f
 
 COCOAPODS: 1.8.4

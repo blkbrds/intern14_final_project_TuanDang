@@ -42,7 +42,7 @@ extension Array {
 
 extension Array where Element: Equatable {
     public mutating func remove(_ element: Element) -> Element? {
-        guard let idx = index(of: element) else {
+        guard let idx = firstIndex(of: element) else {
             return nil
         }
         return self.remove(at: idx)

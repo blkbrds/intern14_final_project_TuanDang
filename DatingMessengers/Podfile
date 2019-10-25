@@ -4,6 +4,10 @@
 target 'DatingMessengers' do
   # Comment the next line if you don't want to use dynamic frameworks
   pod 'SwiftUtils'
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+
+
   use_frameworks!
 
   # Pods for DatingMessengers
