@@ -11,13 +11,17 @@ import Foundation
 final class Api {
     struct Path {
         #if DEBUG
-            static let baseURL = "https://dev-asiantech.vn"
+            static let baseURL = "http://localhost:8080/ios"
         #elseif STG
-            static let baseURL = "https://stg-asiantech.vn"
-        #else
-            static let baseURL = "https://pro-asiantech.vn"
+            static let baseURL = "http://whoami.website/api/ios"
         #endif
     }
+    
+    struct Messages {}
+    struct Schedules {}
+    struct Contacts {}
+    struct Maps {}
+    struct Personally {}
 }
 
 protocol URLStringConvertible {

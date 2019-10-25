@@ -32,6 +32,12 @@
 		72CD76B323633B860066DEA9 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76B223633B860066DEA9 /* CollectionCell.swift */; };
 		72CD76B523633BA70066DEA9 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76B423633BA70066DEA9 /* Button.swift */; };
 		72CD76B723633BCA0066DEA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76B623633BCA0066DEA9 /* ViewController.swift */; };
+		72CD76B9236348660066DEA9 /* Api.Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76B8236348660066DEA9 /* Api.Messages.swift */; };
+		72CD76BB2363488A0066DEA9 /* Api.Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76BA2363488A0066DEA9 /* Api.Schedules.swift */; };
+		72CD76BD236348980066DEA9 /* Api.Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76BC236348980066DEA9 /* Api.Contacts.swift */; };
+		72CD76BF236348AC0066DEA9 /* Api.Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76BE236348AC0066DEA9 /* Api.Maps.swift */; };
+		72CD76C1236348B90066DEA9 /* Api.Personally.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76C0236348B90066DEA9 /* Api.Personally.swift */; };
+		72CD76C323634C3B0066DEA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CD76C223634C3B0066DEA9 /* Default-568h@2x.png */; };
 		D6EE8620E86D7F84BB78859A /* Pods_DatingMessengers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD2909C650513FFE16A12EE /* Pods_DatingMessengers.framework */; };
 		E691B10D9376D906B872B2AD /* Pods_DatingMessengers_DatingMessengersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A04B668F4736F42F95ECF0 /* Pods_DatingMessengers_DatingMessengersUITests.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +94,12 @@
 		72CD76B223633B860066DEA9 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		72CD76B423633BA70066DEA9 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		72CD76B623633BCA0066DEA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		72CD76B8236348660066DEA9 /* Api.Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Messages.swift; sourceTree = "<group>"; };
+		72CD76BA2363488A0066DEA9 /* Api.Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Schedules.swift; sourceTree = "<group>"; };
+		72CD76BC236348980066DEA9 /* Api.Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Contacts.swift; sourceTree = "<group>"; };
+		72CD76BE236348AC0066DEA9 /* Api.Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Maps.swift; sourceTree = "<group>"; };
+		72CD76C0236348B90066DEA9 /* Api.Personally.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Personally.swift; sourceTree = "<group>"; };
+		72CD76C223634C3B0066DEA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D3671E00DBDB81136569DCF9 /* Pods_DatingMessengersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingMessengersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2C4BF88533301D24F0EA27 /* Pods-DatingMessengersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengersTests.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengersTests/Pods-DatingMessengersTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC7F6D5D24417DAB64C8EF72 /* Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengers-DatingMessengersUITests/Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		720C27592363001700BBE05B = {
 			isa = PBXGroup;
 			children = (
+				72CD76C223634C3B0066DEA9 /* Default-568h@2x.png */,
 				720C27642363001800BBE05B /* DatingMessengers */,
 				720C277B2363001C00BBE05B /* DatingMessengersTests */,
 				720C27862363001C00BBE05B /* DatingMessengersUITests */,
@@ -167,7 +180,6 @@
 				72CD767C2363359F0066DEA9 /* Define */,
 				72CD7691236336F90066DEA9 /* Library */,
 				72CD769B236337640066DEA9 /* Resources */,
-				720C27732363001B00BBE05B /* Info.plist */,
 			);
 			path = DatingMessengers;
 			sourceTree = "<group>";
@@ -205,6 +217,11 @@
 			isa = PBXGroup;
 			children = (
 				72CD7686236336380066DEA9 /* Core */,
+				72CD76B8236348660066DEA9 /* Api.Messages.swift */,
+				72CD76BA2363488A0066DEA9 /* Api.Schedules.swift */,
+				72CD76BC236348980066DEA9 /* Api.Contacts.swift */,
+				72CD76BE236348AC0066DEA9 /* Api.Maps.swift */,
+				72CD76C0236348B90066DEA9 /* Api.Personally.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -244,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				720C276E2363001B00BBE05B /* Assets.xcassets */,
+				720C27732363001B00BBE05B /* Info.plist */,
 				720C27702363001B00BBE05B /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -502,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
+				72CD76C323634C3B0066DEA9 /* Default-568h@2x.png in Resources */,
 				720C276F2363001B00BBE05B /* Assets.xcassets in Resources */,
 				720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */,
 			);
@@ -635,7 +654,9 @@
 				72CD76B723633BCA0066DEA9 /* ViewController.swift in Sources */,
 				72CD767E236335C90066DEA9 /* App.swift in Sources */,
 				72CD76B123633B560066DEA9 /* TableCell.swift in Sources */,
+				72CD76BF236348AC0066DEA9 /* Api.Maps.swift in Sources */,
 				720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */,
+				72CD76B9236348660066DEA9 /* Api.Messages.swift in Sources */,
 				72CD7684236336140066DEA9 /* Font.swift in Sources */,
 				72CD7680236335E20066DEA9 /* String.swift in Sources */,
 				72CD769A236337450066DEA9 /* UIViewControllerExt.swift in Sources */,
@@ -644,11 +665,14 @@
 				72CD768E236336970066DEA9 /* RequestSerializer.swift in Sources */,
 				72CD7690236336AD0066DEA9 /* ResponseSerializer.swift in Sources */,
 				72CD76962363371A0066DEA9 /* MapperExt.swift in Sources */,
+				72CD76BB2363488A0066DEA9 /* Api.Schedules.swift in Sources */,
+				72CD76C1236348B90066DEA9 /* Api.Personally.swift in Sources */,
 				72CD76B323633B860066DEA9 /* CollectionCell.swift in Sources */,
 				72CD7682236335EE0066DEA9 /* Color.swift in Sources */,
 				72CD7698236337300066DEA9 /* StringExt.swift in Sources */,
 				72CD76882363364F0066DEA9 /* Api.swift in Sources */,
 				72CD768C2363367B0066DEA9 /* Error.swift in Sources */,
+				72CD76BD236348980066DEA9 /* Api.Contacts.swift in Sources */,
 				720C27662363001800BBE05B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,7 +770,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -800,7 +824,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -816,17 +840,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = JPRQ9XJ746;
-				INFOPLIST_FILE = DatingMessengers/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DatingMessengers/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DatingMessengers;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -836,17 +861,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = JPRQ9XJ746;
-				INFOPLIST_FILE = DatingMessengers/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DatingMessengers/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DatingMessengers;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
