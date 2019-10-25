@@ -1,0 +1,6 @@
+framework module Pods_DatingMessengersTests {
+  umbrella header "Pods-DatingMessengersTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

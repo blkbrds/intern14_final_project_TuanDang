@@ -1,0 +1,16 @@
+PODS:
+  - SwiftUtils (4.2.1)
+
+DEPENDENCIES:
+  - SwiftUtils
+
+SPEC REPOS:
+  trunk:
+    - SwiftUtils
+
+SPEC CHECKSUMS:
+  SwiftUtils: fa346feeac5a25eab7ea5d59f1857c6253cb8ab1
+
+PODFILE CHECKSUM: a6aeac520957b6109805dc07aa0704cb536aa57a
+
+COCOAPODS: 1.8.4

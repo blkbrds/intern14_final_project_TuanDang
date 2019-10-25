@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0907169C49BD2025FBC3B88C /* Pods_DatingMessengersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3671E00DBDB81136569DCF9 /* Pods_DatingMessengersTests.framework */; };
+		720C27662363001800BBE05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27652363001800BBE05B /* AppDelegate.swift */; };
+		720C276F2363001B00BBE05B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720C276E2363001B00BBE05B /* Assets.xcassets */; };
+		720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720C27702363001B00BBE05B /* LaunchScreen.storyboard */; };
+		720C277D2363001C00BBE05B /* DatingMessengersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C277C2363001C00BBE05B /* DatingMessengersTests.swift */; };
+		720C27882363001C00BBE05B /* DatingMessengersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27872363001C00BBE05B /* DatingMessengersUITests.swift */; };
+		720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27952363012B00BBE05B /* WelcomeViewController.swift */; };
+		720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720C27962363012B00BBE05B /* WelcomeViewController.xib */; };
+		D6EE8620E86D7F84BB78859A /* Pods_DatingMessengers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD2909C650513FFE16A12EE /* Pods_DatingMessengers.framework */; };
+		E691B10D9376D906B872B2AD /* Pods_DatingMessengers_DatingMessengersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A04B668F4736F42F95ECF0 /* Pods_DatingMessengers_DatingMessengersUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		720C27792363001C00BBE05B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 720C275A2363001700BBE05B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 720C27612363001800BBE05B;
+			remoteInfo = DatingMessengers;
+		};
+		720C27842363001C00BBE05B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 720C275A2363001700BBE05B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 720C27612363001800BBE05B;
+			remoteInfo = DatingMessengers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04B0ABD9054DD86920FB5A3E /* Pods-DatingMessengers-DatingMessengersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers-DatingMessengersUITests.debug.xcconfig"; path = "Target Support Files/Pods-DatingMessengers-DatingMessengersUITests/Pods-DatingMessengers-DatingMessengersUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		09A04B668F4736F42F95ECF0 /* Pods_DatingMessengers_DatingMessengersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingMessengers_DatingMessengersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18CF5FE90EB5A57CD192AFB2 /* Pods-DatingMessengers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers.debug.xcconfig"; path = "Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers.debug.xcconfig"; sourceTree = "<group>"; };
+		717D6BA950ED83CB841E5821 /* Pods-DatingMessengers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers.release.xcconfig"; sourceTree = "<group>"; };
+		720C27622363001800BBE05B /* DatingMessengers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingMessengers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		720C27652363001800BBE05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		720C276E2363001B00BBE05B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		720C27712363001B00BBE05B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		720C27732363001B00BBE05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		720C27782363001C00BBE05B /* DatingMessengersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatingMessengersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		720C277C2363001C00BBE05B /* DatingMessengersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingMessengersTests.swift; sourceTree = "<group>"; };
+		720C277E2363001C00BBE05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		720C27832363001C00BBE05B /* DatingMessengersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatingMessengersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		720C27872363001C00BBE05B /* DatingMessengersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingMessengersUITests.swift; sourceTree = "<group>"; };
+		720C27892363001C00BBE05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		720C27952363012B00BBE05B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		720C27962363012B00BBE05B /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		D3671E00DBDB81136569DCF9 /* Pods_DatingMessengersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingMessengersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA2C4BF88533301D24F0EA27 /* Pods-DatingMessengersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengersTests.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengersTests/Pods-DatingMessengersTests.release.xcconfig"; sourceTree = "<group>"; };
+		DC7F6D5D24417DAB64C8EF72 /* Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengers-DatingMessengersUITests/Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EAA18E6FCB86B5F3D4886EFB /* Pods-DatingMessengersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengersTests.debug.xcconfig"; path = "Target Support Files/Pods-DatingMessengersTests/Pods-DatingMessengersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCD2909C650513FFE16A12EE /* Pods_DatingMessengers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingMessengers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		720C275F2363001800BBE05B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6EE8620E86D7F84BB78859A /* Pods_DatingMessengers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720C27752363001C00BBE05B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0907169C49BD2025FBC3B88C /* Pods_DatingMessengersTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720C27802363001C00BBE05B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E691B10D9376D906B872B2AD /* Pods_DatingMessengers_DatingMessengersUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		316DC52E69DF7A368D253FA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18CF5FE90EB5A57CD192AFB2 /* Pods-DatingMessengers.debug.xcconfig */,
+				717D6BA950ED83CB841E5821 /* Pods-DatingMessengers.release.xcconfig */,
+				04B0ABD9054DD86920FB5A3E /* Pods-DatingMessengers-DatingMessengersUITests.debug.xcconfig */,
+				DC7F6D5D24417DAB64C8EF72 /* Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig */,
+				EAA18E6FCB86B5F3D4886EFB /* Pods-DatingMessengersTests.debug.xcconfig */,
+				DA2C4BF88533301D24F0EA27 /* Pods-DatingMessengersTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		720C27592363001700BBE05B = {
+			isa = PBXGroup;
+			children = (
+				720C27642363001800BBE05B /* DatingMessengers */,
+				720C277B2363001C00BBE05B /* DatingMessengersTests */,
+				720C27862363001C00BBE05B /* DatingMessengersUITests */,
+				720C27632363001800BBE05B /* Products */,
+				316DC52E69DF7A368D253FA7 /* Pods */,
+				DAB7954A728B110F47ECD72B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		720C27632363001800BBE05B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				720C27622363001800BBE05B /* DatingMessengers.app */,
+				720C27782363001C00BBE05B /* DatingMessengersTests.xctest */,
+				720C27832363001C00BBE05B /* DatingMessengersUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		720C27642363001800BBE05B /* DatingMessengers */ = {
+			isa = PBXGroup;
+			children = (
+				720C27652363001800BBE05B /* AppDelegate.swift */,
+				720C276E2363001B00BBE05B /* Assets.xcassets */,
+				720C27702363001B00BBE05B /* LaunchScreen.storyboard */,
+				720C27732363001B00BBE05B /* Info.plist */,
+				720C27952363012B00BBE05B /* WelcomeViewController.swift */,
+				720C27962363012B00BBE05B /* WelcomeViewController.xib */,
+			);
+			path = DatingMessengers;
+			sourceTree = "<group>";
+		};
+		720C277B2363001C00BBE05B /* DatingMessengersTests */ = {
+			isa = PBXGroup;
+			children = (
+				720C277C2363001C00BBE05B /* DatingMessengersTests.swift */,
+				720C277E2363001C00BBE05B /* Info.plist */,
+			);
+			path = DatingMessengersTests;
+			sourceTree = "<group>";
+		};
+		720C27862363001C00BBE05B /* DatingMessengersUITests */ = {
+			isa = PBXGroup;
+			children = (
+				720C27872363001C00BBE05B /* DatingMessengersUITests.swift */,
+				720C27892363001C00BBE05B /* Info.plist */,
+			);
+			path = DatingMessengersUITests;
+			sourceTree = "<group>";
+		};
+		DAB7954A728B110F47ECD72B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCD2909C650513FFE16A12EE /* Pods_DatingMessengers.framework */,
+				09A04B668F4736F42F95ECF0 /* Pods_DatingMessengers_DatingMessengersUITests.framework */,
+				D3671E00DBDB81136569DCF9 /* Pods_DatingMessengersTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		720C27612363001800BBE05B /* DatingMessengers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 720C278C2363001C00BBE05B /* Build configuration list for PBXNativeTarget "DatingMessengers" */;
+			buildPhases = (
+				8C8EDE7BB450717B9FE57527 /* [CP] Check Pods Manifest.lock */,
+				720C275E2363001800BBE05B /* Sources */,
+				720C275F2363001800BBE05B /* Frameworks */,
+				720C27602363001800BBE05B /* Resources */,
+				A4763E4CF2ED78869CCA0DE0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DatingMessengers;
+			productName = DatingMessengers;
+			productReference = 720C27622363001800BBE05B /* DatingMessengers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		720C27772363001C00BBE05B /* DatingMessengersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 720C278F2363001C00BBE05B /* Build configuration list for PBXNativeTarget "DatingMessengersTests" */;
+			buildPhases = (
+				AFC24D6FC0CAA0D30BEAFB4F /* [CP] Check Pods Manifest.lock */,
+				720C27742363001C00BBE05B /* Sources */,
+				720C27752363001C00BBE05B /* Frameworks */,
+				720C27762363001C00BBE05B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				720C277A2363001C00BBE05B /* PBXTargetDependency */,
+			);
+			name = DatingMessengersTests;
+			productName = DatingMessengersTests;
+			productReference = 720C27782363001C00BBE05B /* DatingMessengersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		720C27822363001C00BBE05B /* DatingMessengersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 720C27922363001C00BBE05B /* Build configuration list for PBXNativeTarget "DatingMessengersUITests" */;
+			buildPhases = (
+				006503F67EE91E2FF4D94B05 /* [CP] Check Pods Manifest.lock */,
+				720C277F2363001C00BBE05B /* Sources */,
+				720C27802363001C00BBE05B /* Frameworks */,
+				720C27812363001C00BBE05B /* Resources */,
+				99935A0B1F93168487174649 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				720C27852363001C00BBE05B /* PBXTargetDependency */,
+			);
+			name = DatingMessengersUITests;
+			productName = DatingMessengersUITests;
+			productReference = 720C27832363001C00BBE05B /* DatingMessengersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		720C275A2363001700BBE05B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = MBA0051;
+				TargetAttributes = {
+					720C27612363001800BBE05B = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					720C27772363001C00BBE05B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 720C27612363001800BBE05B;
+					};
+					720C27822363001C00BBE05B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 720C27612363001800BBE05B;
+					};
+				};
+			};
+			buildConfigurationList = 720C275D2363001700BBE05B /* Build configuration list for PBXProject "DatingMessengers" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 720C27592363001700BBE05B;
+			productRefGroup = 720C27632363001800BBE05B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				720C27612363001800BBE05B /* DatingMessengers */,
+				720C27772363001C00BBE05B /* DatingMessengersTests */,
+				720C27822363001C00BBE05B /* DatingMessengersUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		720C27602363001800BBE05B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
+				720C276F2363001B00BBE05B /* Assets.xcassets in Resources */,
+				720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720C27762363001C00BBE05B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720C27812363001C00BBE05B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		006503F67EE91E2FF4D94B05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatingMessengers-DatingMessengersUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C8EDE7BB450717B9FE57527 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatingMessengers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99935A0B1F93168487174649 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingMessengers-DatingMessengersUITests/Pods-DatingMessengers-DatingMessengersUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingMessengers-DatingMessengersUITests/Pods-DatingMessengers-DatingMessengersUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DatingMessengers-DatingMessengersUITests/Pods-DatingMessengers-DatingMessengersUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4763E4CF2ED78869CCA0DE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFC24D6FC0CAA0D30BEAFB4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatingMessengersTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		720C275E2363001800BBE05B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */,
+				720C27662363001800BBE05B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720C27742363001C00BBE05B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720C277D2363001C00BBE05B /* DatingMessengersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720C277F2363001C00BBE05B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720C27882363001C00BBE05B /* DatingMessengersUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		720C277A2363001C00BBE05B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 720C27612363001800BBE05B /* DatingMessengers */;
+			targetProxy = 720C27792363001C00BBE05B /* PBXContainerItemProxy */;
+		};
+		720C27852363001C00BBE05B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 720C27612363001800BBE05B /* DatingMessengers */;
+			targetProxy = 720C27842363001C00BBE05B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		720C27702363001B00BBE05B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				720C27712363001B00BBE05B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		720C278A2363001C00BBE05B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		720C278B2363001C00BBE05B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		720C278D2363001C00BBE05B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CF5FE90EB5A57CD192AFB2 /* Pods-DatingMessengers.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPRQ9XJ746;
+				INFOPLIST_FILE = DatingMessengers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		720C278E2363001C00BBE05B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 717D6BA950ED83CB841E5821 /* Pods-DatingMessengers.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPRQ9XJ746;
+				INFOPLIST_FILE = DatingMessengers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		720C27902363001C00BBE05B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAA18E6FCB86B5F3D4886EFB /* Pods-DatingMessengersTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPRQ9XJ746;
+				INFOPLIST_FILE = DatingMessengersTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatingMessengers.app/DatingMessengers";
+			};
+			name = Debug;
+		};
+		720C27912363001C00BBE05B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA2C4BF88533301D24F0EA27 /* Pods-DatingMessengersTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPRQ9XJ746;
+				INFOPLIST_FILE = DatingMessengersTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatingMessengers.app/DatingMessengers";
+			};
+			name = Release;
+		};
+		720C27932363001C00BBE05B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04B0ABD9054DD86920FB5A3E /* Pods-DatingMessengers-DatingMessengersUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPRQ9XJ746;
+				INFOPLIST_FILE = DatingMessengersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DatingMessengers;
+			};
+			name = Debug;
+		};
+		720C27942363001C00BBE05B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC7F6D5D24417DAB64C8EF72 /* Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPRQ9XJ746;
+				INFOPLIST_FILE = DatingMessengersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.DatingMessengersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DatingMessengers;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		720C275D2363001700BBE05B /* Build configuration list for PBXProject "DatingMessengers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				720C278A2363001C00BBE05B /* Debug */,
+				720C278B2363001C00BBE05B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		720C278C2363001C00BBE05B /* Build configuration list for PBXNativeTarget "DatingMessengers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				720C278D2363001C00BBE05B /* Debug */,
+				720C278E2363001C00BBE05B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		720C278F2363001C00BBE05B /* Build configuration list for PBXNativeTarget "DatingMessengersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				720C27902363001C00BBE05B /* Debug */,
+				720C27912363001C00BBE05B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		720C27922363001C00BBE05B /* Build configuration list for PBXNativeTarget "DatingMessengersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				720C27932363001C00BBE05B /* Debug */,
+				720C27942363001C00BBE05B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 720C275A2363001700BBE05B /* Project object */;
+}
