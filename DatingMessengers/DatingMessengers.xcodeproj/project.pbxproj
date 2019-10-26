@@ -26,6 +26,8 @@
 		72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E352363538500F807C8 /* PersonalViewController.swift */; };
 		72A47E382363538500F807C8 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E362363538500F807C8 /* PersonalViewController.xib */; };
 		72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */; };
+		72AF069E23645847006EFC5C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069D23645847006EFC5C /* ResponseData.swift */; };
+		72AF06A223647228006EFC5C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF06A123647228006EFC5C /* RequestData.swift */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -102,6 +104,8 @@
 		72A47E352363538500F807C8 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		72A47E362363538500F807C8 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
 		72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellViewModel.swift; sourceTree = "<group>"; };
+		72AF069D23645847006EFC5C /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		72AF06A123647228006EFC5C /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -230,11 +234,13 @@
 			path = DatingMessengersUITests;
 			sourceTree = "<group>";
 		};
-		729DD9DD23641DC500A4DAE1 /* Result */ = {
+		729DD9DD23641DC500A4DAE1 /* DataAPI */ = {
 			isa = PBXGroup;
 			children = (
+				72AF069D23645847006EFC5C /* ResponseData.swift */,
+				72AF06A123647228006EFC5C /* RequestData.swift */,
 			);
-			path = Result;
+			path = DataAPI;
 			sourceTree = "<group>";
 		};
 		72CD5EB52363EFDF00972BE0 /* Domain */ = {
@@ -441,7 +447,7 @@
 		72CD76AE23633AF80066DEA9 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
-				729DD9DD23641DC500A4DAE1 /* Result */,
+				729DD9DD23641DC500A4DAE1 /* DataAPI */,
 				72CD5EB52363EFDF00972BE0 /* Domain */,
 			);
 			path = Schema;
@@ -724,6 +730,7 @@
 				72F6448D23635D5B00F8B538 /* SchedulesViewModel.swift in Sources */,
 				72A47E332363530800F807C8 /* SchedulesViewController.swift in Sources */,
 				720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */,
+				72AF06A223647228006EFC5C /* RequestData.swift in Sources */,
 				72CD76B9236348660066DEA9 /* Api.Messages.swift in Sources */,
 				72CD7684236336140066DEA9 /* Font.swift in Sources */,
 				72CD7680236335E20066DEA9 /* String.swift in Sources */,
@@ -744,6 +751,7 @@
 				72CD7698236337300066DEA9 /* StringExt.swift in Sources */,
 				72CD76882363364F0066DEA9 /* Api.swift in Sources */,
 				72CD768C2363367B0066DEA9 /* Error.swift in Sources */,
+				72AF069E23645847006EFC5C /* ResponseData.swift in Sources */,
 				72CD76BD236348980066DEA9 /* Api.Contacts.swift in Sources */,
 				720C27662363001800BBE05B /* AppDelegate.swift in Sources */,
 			);

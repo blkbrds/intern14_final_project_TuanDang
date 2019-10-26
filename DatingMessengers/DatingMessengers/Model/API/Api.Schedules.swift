@@ -40,7 +40,7 @@ extension Api.Schedules {
     /**
      * Get all schedules.
      */
-    static func getSchedules(withPage: Int, numberOfRecordsPerIndex: Int, completion: @escaping Completion<ScheduleObject>) {
+    static func getSchedules(withPage: Int = 0, numberOfRecordsPerIndex: Int = 10, completion: @escaping Completion<ScheduleObject>) {
         
         // MARK: Call to REST url.
         let urlString = self.QueryString().getUserSchedules(pageIndex: withPage, pageSize: numberOfRecordsPerIndex)
