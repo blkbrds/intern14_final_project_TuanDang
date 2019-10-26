@@ -23,10 +23,20 @@ extension Api.Schedules {
         var schedules : [ScheduleObject]
     }
     
+    static func getDummyData(completion: ([ScheduleObject]) -> Void) {
+        let schedule = ScheduleObject()
+        schedule.id = "123"
+        schedule.scheduleContent = "new content"
+        schedule.scheduleTitle = "Schedule title"
+        
+        var schedules = [ScheduleObject]()
+        schedules.append(schedule)
+    }
+    
     /**
      * Get all schedules.
      */
-    static func getSchedules(pageIndex: Int = 0, recordsInPage: Int = 10, completion: @escaping Completion<SchemaResponse>) {
+    static func getSchedules(pageIndex: Int = 0, recordsInPage: Int = 10, completion: @escaping Completion) {
         // Querry call to URL.
         let urlString = QueryString().getUserSchedules()
         
@@ -51,12 +61,13 @@ extension Api.Schedules {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let value):
-                    guard let value = value as? JSObject,
-                        let searchResult = Mapper<YouTubeResult>().map(JSON: value) else {
+                    guard let value = value as? JSObject //, let searchResult = Mapper<YouTubeResult>().map(JSON: value)
+                        else {
                         completion(.failure(Api.Error.json))
                         return
                     }
-                    completion(.success(searchResult))
+                    print("Json value : \(value)")
+                    completion(.success([]))
                 case .failure(let error):
                     completion(.failure(error))
                 }
