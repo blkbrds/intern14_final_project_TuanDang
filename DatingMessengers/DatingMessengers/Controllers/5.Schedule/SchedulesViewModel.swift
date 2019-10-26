@@ -32,13 +32,13 @@ class SchedulesViewModel {
         return ScheduleDetailViewModel(schedule: schedules[indexPath.row])
     }
     
-    func getSchedules(completion: @escaping (APIError?) -> Void) {
-        Api.Schedules.getSchedules { (result) in
+    func getSchedules(completion: @escaping (Error?) -> Void) {
+        Api.Schedules.getSchedules(pageIndex: 1, recordsInPage: 1) { (result) in
             switch result {
             case .failure(let error):
                 completion(error)
             case .success(let scheduleResult):
-                for schedule in scheduleResult.schedules {
+                for schedule in (scheduleResult.schedules as AnyObject) {
                     self.schedules.append(schedule)
                 }
                 completion(nil)

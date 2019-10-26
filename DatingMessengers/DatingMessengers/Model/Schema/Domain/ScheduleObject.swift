@@ -19,6 +19,7 @@ enum AcceptStatus: String {
  * Schema Schedule object.
  */
 final class ScheduleObject {
+    
     var id: String?
     var scheduleStartDate: String?
     var scheduleStartTime: String?
@@ -51,11 +52,12 @@ final class ScheduleObject {
                 self.scheduleTitle = title
             }
             // Start time.
+            if let timeStart = data["time_end"] as? String {
                  if let beginTime = Helper.shared.convertStringToComponents(from: timeStart) {
                     self.scheduleStartDate = String(beginTime.day!) + "/" + String(beginTime.month!)
                     self.scheduleStartTime = String(beginTime.hour!) + ":" + String(beginTime.minute!)
                 }
-
+            }
             // End time.
             if let timeEnd = data["time_end"] as? String {
                 if let endTime = Helper.shared.convertStringToComponents(from: timeEnd) {
@@ -70,7 +72,7 @@ final class ScheduleObject {
                 self.acceptStatus = AcceptStatus.New
             }
         }
-    
+    }
     // TODO: Not yet implements json convert.
 }
 

@@ -37,9 +37,21 @@ extension ApiManager {
                                         encoding: encoding,
                                         headers: _headers
         ).responseJSON(completion: { (response) in
-            completion?(response.result)
+            if let error = response.error,
+                error.code == Api.Error.connectionAbort.code || error.code == Api.Error.connectionWasLost.code {
+                Alamofire.request(urlString.urlString,
+                                  method: method,
+                                  parameters: parameters,
+                                  encoding: encoding,
+                                  headers: _headers
+                    ).responseJSON { response in
+                        completion?(response.result)
+                }
+            } else {
+                completion?(response.result)
+            }
         })
-
+        
         return request
     }
 }

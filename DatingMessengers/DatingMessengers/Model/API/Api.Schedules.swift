@@ -26,26 +26,27 @@ extension Api.Schedules {
     /**
      * Get all schedules.
      */
-    static func getSchedules(completion: @escaping APICompletion<ScheduleResult>) {
+    static func getSchedules(pageIndex: Int, recordsInPage: Int, completion: @escaping Completion) {
+            
         // Querry call to URL.
         let urlString = QueryString().getUserSchedules()
         
-        Api.shared().request(urlString: urlString) { (result) in
-            switch result {
-            case .failure(let error):
-                print(error.localizedDescription)
-                completion(.failure(error))
-            case .success(let data):
-                if let data = data {
-                    let json = data.convertToJSON()
-                    let schedule = ScheduleObject(json: json)
-                    var schedules = [ScheduleObject]()
-                    schedules.append(schedule)
-                    completion(.success(ScheduleResult(schedules: schedules)))
-                } else {
-                    completion(.failure(.error("Data is not format.")))
-                }
-            }
-        }
+//        Api.shared.request(urlString: urlString) { (result) in
+//            switch result {
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//                completion(.failure(error))
+//            case .success(let data):
+//                if let data = data {
+//                    let json = data.convertToJSON()
+//                    let schedule = ScheduleObject(json: json)
+//                    var schedules = [ScheduleObject]()
+//                    schedules.append(schedule)
+//                    completion(.success(ScheduleResult(schedules: schedules)))
+//                } else {
+//                    completion(.failure(.error("Data is not format.")))
+//                }
+//            }
+//        }
     }
 }

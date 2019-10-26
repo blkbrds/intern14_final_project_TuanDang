@@ -25,6 +25,8 @@
 		72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E322363530800F807C8 /* SchedulesViewController.xib */; };
 		72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E352363538500F807C8 /* PersonalViewController.swift */; };
 		72A47E382363538500F807C8 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E362363538500F807C8 /* PersonalViewController.xib */; };
+		72CD5EB12363E51F00972BE0 /* ScheduleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD5EB02363E51F00972BE0 /* ScheduleCellViewModel.swift */; };
+		72CD5EB32363E8FE00972BE0 /* ScheduleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD5EB22363E8FE00972BE0 /* ScheduleDetailViewModel.swift */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -102,6 +104,8 @@
 		72A47E322363530800F807C8 /* SchedulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulesViewController.xib; sourceTree = "<group>"; };
 		72A47E352363538500F807C8 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		72A47E362363538500F807C8 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		72CD5EB02363E51F00972BE0 /* ScheduleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellViewModel.swift; sourceTree = "<group>"; };
+		72CD5EB22363E8FE00972BE0 /* ScheduleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewModel.swift; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -230,6 +234,22 @@
 				720C27892363001C00BBE05B /* Info.plist */,
 			);
 			path = DatingMessengersUITests;
+			sourceTree = "<group>";
+		};
+		72CD5EB42363EFD600972BE0 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Result;
+			path = "Réult";
+			sourceTree = "<group>";
+		};
+		72CD5EB52363EFDF00972BE0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				72F6448E23635F3400F8B538 /* ScheduleObject.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		72CD767C2363359F0066DEA9 /* Define */ = {
@@ -371,6 +391,8 @@
 			children = (
 				72F644922363617B00F8B538 /* ScheduleTableViewCell.swift */,
 				72F644932363617B00F8B538 /* ScheduleTableViewCell.xib */,
+				72CD5EB02363E51F00972BE0 /* ScheduleCellViewModel.swift */,
+				72CD5EB22363E8FE00972BE0 /* ScheduleDetailViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -429,7 +451,8 @@
 		72CD76AE23633AF80066DEA9 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
-				72F6448E23635F3400F8B538 /* ScheduleObject.swift */,
+				72CD5EB52363EFDF00972BE0 /* Domain */,
+				72CD5EB42363EFD600972BE0 /* Result */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -712,6 +735,7 @@
 				72F6449123635FF100F8B538 /* Helper.swift in Sources */,
 				72F6448D23635D5B00F8B538 /* SchedulesViewModel.swift in Sources */,
 				72A47E332363530800F807C8 /* SchedulesViewController.swift in Sources */,
+				72CD5EB12363E51F00972BE0 /* ScheduleCellViewModel.swift in Sources */,
 				720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */,
 				72CD76B9236348660066DEA9 /* Api.Messages.swift in Sources */,
 				72CD7684236336140066DEA9 /* Font.swift in Sources */,
@@ -726,6 +750,7 @@
 				72CD76962363371A0066DEA9 /* MapperExt.swift in Sources */,
 				72F6448F23635F3400F8B538 /* ScheduleObject.swift in Sources */,
 				72CD76BB2363488A0066DEA9 /* Api.Schedules.swift in Sources */,
+				72CD5EB32363E8FE00972BE0 /* ScheduleDetailViewModel.swift in Sources */,
 				72CD76C1236348B90066DEA9 /* Api.Personally.swift in Sources */,
 				72CD76B323633B860066DEA9 /* CollectionCell.swift in Sources */,
 				72CD7682236335EE0066DEA9 /* Color.swift in Sources */,

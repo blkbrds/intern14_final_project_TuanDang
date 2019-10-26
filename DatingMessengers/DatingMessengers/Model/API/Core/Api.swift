@@ -9,6 +9,10 @@
 import Foundation
 
 final class Api {
+    
+    static let shared = Api()
+    private init() { }
+    
     struct Path {
         #if DEBUG
             static let baseURL = "http://localhost:8080/ios"
