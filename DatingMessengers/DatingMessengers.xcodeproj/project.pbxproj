@@ -25,6 +25,7 @@
 		72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E322363530800F807C8 /* SchedulesViewController.xib */; };
 		72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E352363538500F807C8 /* PersonalViewController.swift */; };
 		72A47E382363538500F807C8 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E362363538500F807C8 /* PersonalViewController.xib */; };
+		72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -100,6 +101,7 @@
 		72A47E322363530800F807C8 /* SchedulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulesViewController.xib; sourceTree = "<group>"; };
 		72A47E352363538500F807C8 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		72A47E362363538500F807C8 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellViewModel.swift; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 		72CD76A3236338AF0066DEA9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				72CD7680236335E20066DEA9 /* String.swift in Sources */,
 				72CD769A236337450066DEA9 /* UIViewControllerExt.swift in Sources */,
 				72CD76B523633BA70066DEA9 /* Button.swift in Sources */,
+				72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */,
 				72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */,
 				72CD76942363370A0066DEA9 /* InputViewExt.swift in Sources */,
 				72A47E2F236352E500F807C8 /* ContactsViewController.swift in Sources */,

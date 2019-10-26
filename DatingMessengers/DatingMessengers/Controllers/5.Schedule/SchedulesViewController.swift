@@ -25,7 +25,6 @@ enum ScheduleIdentity: String {
 class SchedulesViewController: ViewController {
 
     @IBOutlet weak var scheduleTableView: UITableView!
-//    var viewModel: SchedulesViewModel?
     var viewModel = SchedulesViewModel()
 
     
@@ -39,6 +38,10 @@ class SchedulesViewController: ViewController {
         scheduleTableView.register(UITableViewCell.self, forCellReuseIdentifier: ScheduleIdentity.table.name)
         scheduleTableView.dataSource = self
         scheduleTableView.delegate = self
+        
+        viewModel.getSchedules(withPage: 0, numberOfRecordsPerIndex: 10) {
+            scheduleTableView.reloadData()
+        }
     }
 }
 
@@ -53,8 +56,7 @@ extension SchedulesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ScheduleIdentity.table.name, for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
-        cell.backgroundColor = .blue
+        cell.textLabel?.text = viewModel.cellViewModel(at: indexPath).scheduleTitle
         return cell
     }
     
