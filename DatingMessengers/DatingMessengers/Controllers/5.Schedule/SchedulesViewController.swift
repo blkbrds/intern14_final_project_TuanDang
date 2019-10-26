@@ -42,7 +42,9 @@ class SchedulesViewController: ViewController {
         viewModel.getSchedules { [weak self] result in
             guard let this = self else { return }
             switch result {
-            case .success: break
+            case .success:
+                print("To success case.")
+                break
             case .failure(let error):
                 print("Error happen.")
             }

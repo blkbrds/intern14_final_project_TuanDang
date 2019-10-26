@@ -39,7 +39,10 @@ class SchedulesViewModel {
         Api.Schedules.getSchedules(withPage: 0, numberOfRecordsPerIndex: 10) { result in
             switch result {
             case .success(let trendingResult):
-                completion(.success(nil))
+                print("data : \(trendingResult)")
+                print("Type of: \(type(of: DatatrendingResult))")
+                self.schedules.append(trendingResult)
+                completion(.success(self.schedules))
             case .failure(let error):
                 completion(.failure(error))
             }

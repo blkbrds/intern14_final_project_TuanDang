@@ -16,7 +16,7 @@ class ScheduleCellViewModel {
     var endDate: String?
     var endTime: String?
     var contentSchedule: String?
-    var status: AcceptStatus
+    var status: String?
     
     init(schedule: ScheduleObject) {
         

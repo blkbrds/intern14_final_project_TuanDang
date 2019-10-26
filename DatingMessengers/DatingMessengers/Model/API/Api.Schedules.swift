@@ -51,7 +51,10 @@ extension Api.Schedules {
                 case .success(let value):
                     if let value = value as? JSObject {
                         print("Response value : \(value)")
-                        completion(.failure(Api.Error.json))
+                        let searchResult = ScheduleObject(json: value)
+                        
+                        print("Search result: \(searchResult.id)")
+                        completion(.success(searchResult))
                     } else {
                         completion(.failure(Api.Error.json))
                         return

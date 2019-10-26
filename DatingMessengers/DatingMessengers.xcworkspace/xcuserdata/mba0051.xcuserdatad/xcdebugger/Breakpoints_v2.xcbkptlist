@@ -80,7 +80,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
                   endingLineNumber = "51"
-                  offsetFromSymbolStart = "226">
+                  offsetFromSymbolStart = "254">
                </Location>
                <Location
                   uuid = "FED3FF7F-FF89-4B1A-9A1D-3AF6C54DB616 - f4d13a02c0155f0d"
@@ -95,7 +95,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
                   endingLineNumber = "51"
-                  offsetFromSymbolStart = "230">
+                  offsetFromSymbolStart = "258">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -119,31 +119,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "14F6CF6C-65E7-4369-9A14-A77F572A9950"
+            uuid = "753A734F-954F-4B10-B1C6-CE45B572A385"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DatingMessengers/Model/API/Api.Schedules.swift"
+            filePath = "DatingMessengers/Controllers/5.Schedule/SchedulesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "getSchedules(withPage:numberOfRecordsPerIndex:completion:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "settingData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "21BBE91E-5E84-4544-9CCC-4E75720747BA"
+            uuid = "8B4BDE16-988E-463C-9E92-4889275D8A8E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DatingMessengers/Controllers/5.Schedule/SchedulesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getSchedules(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "299B36A4-1D73-4BE4-A96E-D374F23D9F23"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DatingMessengers/Model/API/Api.Schedules.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "getSchedules(withPage:numberOfRecordsPerIndex:completion:)"
             landmarkType = "7">
          </BreakpointContent>
