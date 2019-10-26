@@ -23,7 +23,14 @@ enum APIResult {
     case failure(Error)
 }
 
+protocol  APIManagerDelegate: class {
+    func request(data: [String: Any], error: Error?)
+    func downloadImage(image: UIImage?, error: Error?)
+}
+
 final class ApiManager {
+
+    weak var delegate: APIManagerDelegate?
 
     var defaultHTTPHeaders: [String: String] {
         var headers: [String: String] = [:]

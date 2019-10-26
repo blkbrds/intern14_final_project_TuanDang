@@ -26,12 +26,11 @@ extension Api.Schedules {
     /**
      * Get all schedules.
      */
-    static func getSchedules(pageIndex: Int, recordsInPage: Int, completion: @escaping Completion) {
-            
+    static func getSchedules(pageIndex: Int = 0, recordsInPage: Int = 10, completion: @escaping Completion<SchemaResponse>) {
         // Querry call to URL.
         let urlString = QueryString().getUserSchedules()
         
-//        Api.shared.request(urlString: urlString) { (result) in
+//        api.request(with: urlString) { result in
 //            switch result {
 //            case .failure(let error):
 //                print(error.localizedDescription)
@@ -48,5 +47,20 @@ extension Api.Schedules {
 //                }
 //            }
 //        }
+        api.request(method: .get, urlString: urlString) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let value):
+                    guard let value = value as? JSObject,
+                        let searchResult = Mapper<YouTubeResult>().map(JSON: value) else {
+                        completion(.failure(Api.Error.json))
+                        return
+                    }
+                    completion(.success(searchResult))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
     }
 }

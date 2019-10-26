@@ -12,7 +12,7 @@ class SchedulesViewModel {
     
     var schedules: [ScheduleObject] = []
     init() {}
-    
+
     /**
      * Number of section. It will extend based on schedule day.
      */
@@ -38,9 +38,9 @@ class SchedulesViewModel {
             case .failure(let error):
                 completion(error)
             case .success(let scheduleResult):
-                for schedule in (scheduleResult.schedules as AnyObject) {
-                    self.schedules.append(schedule)
-                }
+//                for schedule in (scheduleResult.schedules as ScheduleObject) {
+//                    self.schedules.append(schedule)
+//                }
                 completion(nil)
             }
         }
