@@ -35,11 +35,14 @@ class SchedulesViewModel {
         return ScheduleCellViewModel(schedule: schedules[indexPath.row])
     }
     
-    func getSchedules(withPage: Int, numberOfRecordsPerIndex: Int, completion: () -> Void) {
-        Api.Schedules.getSchedules(withPage: 0, numberOfRecordsPerIndex: 10) { (datas) in
-            self.schedules = datas
-            completion()
+    func getSchedules(completion: @escaping APICompletion) {
+        Api.Schedules.getSchedules(withPage: 0, numberOfRecordsPerIndex: 10) { result in
+            switch result {
+            case .success(let trendingResult):
+                completion(.success(nil))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
-    
 }

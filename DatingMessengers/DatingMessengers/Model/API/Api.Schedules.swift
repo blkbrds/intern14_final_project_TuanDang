@@ -14,8 +14,8 @@ extension Api.Schedules {
         /**
          * Get API URL.
          */
-        func getUserSchedules() -> String {
-            return Api.Path.baseURL + Api.Path.scheduleUrl
+        func getUserSchedules(pageIndex: Int, pageSize: Int) -> String {
+            return Api.Path.baseURL + Api.Path.scheduleUrl + "/\(pageIndex)"
         }
     }
     
@@ -23,6 +23,9 @@ extension Api.Schedules {
         var schedules : [ScheduleObject]
     }
     
+    /**
+     * Dummy data to display.
+     */
     static func getDummyData() -> [ScheduleObject] {
         let schedule = ScheduleObject()
         schedule.id = "123"
@@ -37,8 +40,32 @@ extension Api.Schedules {
     /**
      * Get all schedules.
      */
-    static func getSchedules(withPage: Int, numberOfRecordsPerIndex: Int, completion: ([ScheduleObject]) -> Void) {
-        let schedules = getDummyData()
-        completion(schedules)
+    static func getSchedules(withPage: Int, numberOfRecordsPerIndex: Int, completion: @escaping Completion<ScheduleObject>) {
+        
+        // MARK: Call to REST url.
+        let urlString = self.QueryString().getUserSchedules(pageIndex: withPage, pageSize: numberOfRecordsPerIndex)
+        
+        api.request(method: .get, urlString: urlString) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let value):
+                    if let value = value as? JSObject {
+                        print("Response value : \(value)")
+                        completion(.failure(Api.Error.json))
+                    } else {
+                        completion(.failure(Api.Error.json))
+                        return
+                    }
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+        
+        
+        print("Go ahead.")
+//        let schedules = getDummyData()
+//        completion(schedules)
     }
 }
