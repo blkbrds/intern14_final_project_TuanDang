@@ -39,14 +39,9 @@ class SchedulesViewController: ViewController {
         scheduleTableView.dataSource = self
         scheduleTableView.delegate = self
         
-        viewModel.getSchedules { [weak self] result in
-            guard let this = self else { return }
-            switch result {
-            case .success:
-                print("To success case.")
-                break
-            case .failure(let error):
-                print("Error happen.")
+        viewModel.getSchedules { _ in
+            DispatchQueue.main.async {
+                self.scheduleTableView.reloadData()
             }
         }
     }

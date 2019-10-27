@@ -40,9 +40,9 @@ class SchedulesViewModel {
             switch result {
             case .success(let trendingResult):
                 print("data : \(trendingResult)")
-                print("Type of: \(type(of: DatatrendingResult))")
-                self.schedules.append(trendingResult)
-                completion(.success(self.schedules))
+                print("Type of: \(type(of: trendingResult))")
+//                self.schedules = result.schedules
+                completion(.success(nil))
             case .failure(let error):
                 completion(.failure(error))
             }
