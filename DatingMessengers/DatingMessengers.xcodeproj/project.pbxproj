@@ -15,6 +15,16 @@
 		720C27882363001C00BBE05B /* DatingMessengersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27872363001C00BBE05B /* DatingMessengersUITests.swift */; };
 		720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27952363012B00BBE05B /* WelcomeViewController.swift */; };
 		720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720C27962363012B00BBE05B /* WelcomeViewController.xib */; };
+		72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E19236351D400F807C8 /* TabbarViewController.swift */; };
+		72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E1A236351D400F807C8 /* TabbarViewController.xib */; };
+		72A47E2B236352C400F807C8 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E29236352C400F807C8 /* MessagesViewController.swift */; };
+		72A47E2C236352C400F807C8 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E2A236352C400F807C8 /* MessagesViewController.xib */; };
+		72A47E2F236352E500F807C8 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E2D236352E500F807C8 /* ContactsViewController.swift */; };
+		72A47E30236352E500F807C8 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E2E236352E500F807C8 /* ContactsViewController.xib */; };
+		72A47E332363530800F807C8 /* SchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E312363530800F807C8 /* SchedulesViewController.swift */; };
+		72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E322363530800F807C8 /* SchedulesViewController.xib */; };
+		72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E352363538500F807C8 /* PersonalViewController.swift */; };
+		72A47E382363538500F807C8 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E362363538500F807C8 /* PersonalViewController.xib */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -77,6 +87,16 @@
 		720C27892363001C00BBE05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720C27952363012B00BBE05B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		720C27962363012B00BBE05B /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		72A47E19236351D400F807C8 /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		72A47E1A236351D400F807C8 /* TabbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabbarViewController.xib; sourceTree = "<group>"; };
+		72A47E29236352C400F807C8 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		72A47E2A236352C400F807C8 /* MessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
+		72A47E2D236352E500F807C8 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		72A47E2E236352E500F807C8 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		72A47E312363530800F807C8 /* SchedulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewController.swift; sourceTree = "<group>"; };
+		72A47E322363530800F807C8 /* SchedulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulesViewController.xib; sourceTree = "<group>"; };
+		72A47E352363538500F807C8 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		72A47E362363538500F807C8 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -294,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				72CD769F236338860066DEA9 /* Cell */,
+				72A47E29236352C400F807C8 /* MessagesViewController.swift */,
+				72A47E2A236352C400F807C8 /* MessagesViewController.xib */,
 			);
 			path = 3.Message;
 			sourceTree = "<group>";
@@ -309,6 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				72CD76A12363389E0066DEA9 /* Cell */,
+				72A47E2D236352E500F807C8 /* ContactsViewController.swift */,
+				72A47E2E236352E500F807C8 /* ContactsViewController.xib */,
 			);
 			path = 4.Contact;
 			sourceTree = "<group>";
@@ -324,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				72CD76A3236338AF0066DEA9 /* Cell */,
+				72A47E312363530800F807C8 /* SchedulesViewController.swift */,
+				72A47E322363530800F807C8 /* SchedulesViewController.xib */,
 			);
 			path = 5.Schedule;
 			sourceTree = "<group>";
@@ -339,6 +365,8 @@
 			isa = PBXGroup;
 			children = (
 				72CD76A5236338BE0066DEA9 /* Cell */,
+				72A47E352363538500F807C8 /* PersonalViewController.swift */,
+				72A47E362363538500F807C8 /* PersonalViewController.xib */,
 			);
 			path = 6.MyPage;
 			sourceTree = "<group>";
@@ -369,6 +397,8 @@
 		72CD76AC23633A6F0066DEA9 /* 2.Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				72A47E19236351D400F807C8 /* TabbarViewController.swift */,
+				72A47E1A236351D400F807C8 /* TabbarViewController.xib */,
 			);
 			path = 2.Tabbar;
 			sourceTree = "<group>";
@@ -519,9 +549,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A47E30236352E500F807C8 /* ContactsViewController.xib in Resources */,
+				72A47E2C236352C400F807C8 /* MessagesViewController.xib in Resources */,
 				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
+				72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */,
 				72CD76C323634C3B0066DEA9 /* Default-568h@2x.png in Resources */,
+				72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */,
 				720C276F2363001B00BBE05B /* Assets.xcassets in Resources */,
+				72A47E382363538500F807C8 /* PersonalViewController.xib in Resources */,
 				720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,16 +687,21 @@
 			files = (
 				72CD768A2363365D0066DEA9 /* ApiManager.swift in Sources */,
 				72CD76B723633BCA0066DEA9 /* ViewController.swift in Sources */,
+				72A47E2B236352C400F807C8 /* MessagesViewController.swift in Sources */,
 				72CD767E236335C90066DEA9 /* App.swift in Sources */,
+				72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */,
 				72CD76B123633B560066DEA9 /* TableCell.swift in Sources */,
 				72CD76BF236348AC0066DEA9 /* Api.Maps.swift in Sources */,
+				72A47E332363530800F807C8 /* SchedulesViewController.swift in Sources */,
 				720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */,
 				72CD76B9236348660066DEA9 /* Api.Messages.swift in Sources */,
 				72CD7684236336140066DEA9 /* Font.swift in Sources */,
 				72CD7680236335E20066DEA9 /* String.swift in Sources */,
 				72CD769A236337450066DEA9 /* UIViewControllerExt.swift in Sources */,
 				72CD76B523633BA70066DEA9 /* Button.swift in Sources */,
+				72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */,
 				72CD76942363370A0066DEA9 /* InputViewExt.swift in Sources */,
+				72A47E2F236352E500F807C8 /* ContactsViewController.swift in Sources */,
 				72CD768E236336970066DEA9 /* RequestSerializer.swift in Sources */,
 				72CD7690236336AD0066DEA9 /* ResponseSerializer.swift in Sources */,
 				72CD76962363371A0066DEA9 /* MapperExt.swift in Sources */,
