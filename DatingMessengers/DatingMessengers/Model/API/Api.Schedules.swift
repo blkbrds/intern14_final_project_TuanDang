@@ -26,13 +26,13 @@ extension Api.Schedules {
     /**
      * Dummy data to display.
      */
-    static func getDummyData() -> [ScheduleObject] {
-        let schedule = ScheduleObject()
+    static func getDummyData() -> [ScheduleDomain] {
+        let schedule = ScheduleDomain()
         schedule.id = "123"
         schedule.scheduleContent = "new content"
         schedule.scheduleTitle = "Schedule title"
         
-        var schedules = [ScheduleObject]()
+        var schedules = [ScheduleDomain]()
         schedules.append(schedule)
         return schedules;
     }
@@ -40,7 +40,7 @@ extension Api.Schedules {
     /**
      * Get all schedules.
      */
-    static func getSchedules(withPage: Int = 0, numberOfRecordsPerIndex: Int = 10, completion: @escaping Completion<[ScheduleObject]>) {
+    static func getSchedules(withPage: Int = 0, numberOfRecordsPerIndex: Int = 10, completion: @escaping Completion<[ScheduleDomain]>) {
         
         // MARK: Call to REST url.
         let urlString = self.QueryString().getUserSchedules()
@@ -59,11 +59,14 @@ extension Api.Schedules {
                 switch result {
                 case .success(let value):
                     if let value = value as? JSObject {
-                        print("Response value : \(value)")
-                        let searchResult = ScheduleObject(json: value)
-                        print("Search result: \(searchResult.id)")
+                        if let data = value["data"] as? JSObject {
+                            var schedules = [ScheduleDomain]()
+                            print("Response value : \(value)")
+                            let searchResult = ScheduleDomain(json: value)
+                            print("Search result: \(searchResult.id)")
+                            
+                        }
 
-                        var schedules = [ScheduleResult]()
                         completion(.failure(Api.Error.json))
                     } else {
                         completion(.failure(Api.Error.json))

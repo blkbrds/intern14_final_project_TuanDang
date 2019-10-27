@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0907169C49BD2025FBC3B88C /* Pods_DatingMessengersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3671E00DBDB81136569DCF9 /* Pods_DatingMessengersTests.framework */; };
+		7200C4952365390C00BA96B7 /* LoacationDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7200C4942365390C00BA96B7 /* LoacationDomain.swift */; };
 		720C27662363001800BBE05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27652363001800BBE05B /* AppDelegate.swift */; };
 		720C276F2363001B00BBE05B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720C276E2363001B00BBE05B /* Assets.xcassets */; };
 		720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720C27702363001B00BBE05B /* LaunchScreen.storyboard */; };
@@ -80,6 +81,7 @@
 		09A04B668F4736F42F95ECF0 /* Pods_DatingMessengers_DatingMessengersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingMessengers_DatingMessengersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF5FE90EB5A57CD192AFB2 /* Pods-DatingMessengers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers.debug.xcconfig"; path = "Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers.debug.xcconfig"; sourceTree = "<group>"; };
 		717D6BA950ED83CB841E5821 /* Pods-DatingMessengers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers.release.xcconfig"; sourceTree = "<group>"; };
+		7200C4942365390C00BA96B7 /* LoacationDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoacationDomain.swift; sourceTree = "<group>"; };
 		720C27622363001800BBE05B /* DatingMessengers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingMessengers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720C27652363001800BBE05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		720C276E2363001B00BBE05B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				72F6448E23635F3400F8B538 /* ScheduleDomain.swift */,
+				7200C4942365390C00BA96B7 /* LoacationDomain.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 			files = (
 				72CD768A2363365D0066DEA9 /* ApiManager.swift in Sources */,
 				72CD76B723633BCA0066DEA9 /* ViewController.swift in Sources */,
+				7200C4952365390C00BA96B7 /* LoacationDomain.swift in Sources */,
 				72A47E2B236352C400F807C8 /* MessagesViewController.swift in Sources */,
 				72CD767E236335C90066DEA9 /* App.swift in Sources */,
 				72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */,
