@@ -13,17 +13,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // MARK: Call to Layout setting and data.
-        layoutSetting()
-        settingData()
+        setupUI()
+        setupData()
     }
     
     /**
      * Required method to setting layout.
      */
-    func layoutSetting() { }
+    func setupUI() { }
     
     /**
      * Config to set data.
      */
-    func settingData() { }
+    func setupData() { }
 }

@@ -10,13 +10,13 @@ import Foundation
 
 class ScheduleCellViewModel {
     
-    var scheduleTitle: String?
-    var startDate: String?
-    var startTime: String?
-    var endDate: String?
-    var endTime: String?
-    var contentSchedule: String?
-    var status: String?
+    var scheduleTitle: String = ""
+    var startDate: String = ""
+    var startTime: String = ""
+    var endDate: String = ""
+    var endTime: String = ""
+    var contentSchedule: String = ""
+    var status: String = ""
     
     init(schedule: ScheduleDomain) {
         

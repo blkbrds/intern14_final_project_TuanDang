@@ -20,6 +20,24 @@ extension Api.Schedules {
         }
     }
     
+    struct QueryParams {
+        
+        /**
+         * Get params for GET method.
+         */
+        func getFilterParams(withPage: Int = 0, numberOfRecordsPerIndex: Int = 10, fromDate: String = "2019-10-27", toDate: String = "", joinStatus: String = "1", sortBy: String = "id", sortType: String = "ASC") -> [String: String] {
+            var params: [String: String] = [:]
+            params["from_date"] = fromDate
+            params["to_date"] = toDate
+            params["filter_status"] = joinStatus
+            params["page_index"] = String(withPage)
+            params["page_size"] = String(numberOfRecordsPerIndex)
+            params["column_sort"] = sortBy
+            params["type_sort"] = sortType
+            return params
+        }
+    }
+    
     /**
      * Dummy data to display.
      */
@@ -41,14 +59,7 @@ extension Api.Schedules {
         
         // MARK: Call to REST url.
         let urlString = self.QueryString().getUserSchedules()
-        var params: [String: String] = [:]
-        params["from_date"] = "2019-10-27"
-        params["to_date"] = ""
-        params["filter_status"] = "1"
-        params["page_index"] = String(withPage)
-        params["page_size"] = String(numberOfRecordsPerIndex)
-        params["column_sort"] = "id"
-        params["type_sort"] = "ASC"
+        let params = self.QueryParams.init().getFilterParams(withPage: withPage, numberOfRecordsPerIndex: numberOfRecordsPerIndex)
         
         api.request(method: .get, urlString: urlString, parameters: params,
                     headers: ApiManager().defaultHTTPHeaders) { result in

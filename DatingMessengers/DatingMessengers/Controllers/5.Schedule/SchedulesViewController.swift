@@ -34,23 +34,33 @@ class SchedulesViewController: ViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func settingData() {
+    override func setupData() {
         scheduleTableView.register(UITableViewCell.self, forCellReuseIdentifier: ScheduleIdentity.table.name)
         scheduleTableView.dataSource = self
         scheduleTableView.delegate = self
-        reloadData()
-    }
-    
-    private func reloadData() {
+        
         self.isLoading = true
         viewModel.getSchedules { result in
             self.isLoading = false
             switch result {
             case .success:
                 self.scheduleTableView.reloadData()
-//                DispatchQueue.main.async {
-//                    self.scheduleTableView.reloadData()
-//                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    /**
+     * Set schedules to tableView.
+     */
+    private func loadMoreSchedules() {
+        self.isLoading = true
+        viewModel.getNextSchedules { result in
+            self.isLoading = false
+            switch result {
+            case .success:
+                self.scheduleTableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -76,7 +86,7 @@ extension SchedulesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = viewModel.schedules.count - 1
         if indexPath.row == lastElement && !isLoading {
-            reloadData()
+            loadMoreSchedules()
         }
     }
     

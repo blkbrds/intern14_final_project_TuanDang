@@ -17,14 +17,14 @@ enum AcceptStatus: String {
 
 final class ScheduleDomain: Mappable {
 
-    var id: String?
-    var scheduleStartDate: String?
-    var scheduleStartTime: String?
-    var scheduleEndDate: String?
-    var scheduleEndTime: String?
-    var scheduleTitle: String?
-    var scheduleContent: String?
-    var acceptStatus: String?
+    var id: String = ""
+    var scheduleStartDate: String = ""
+    var scheduleStartTime: String = ""
+    var scheduleEndDate: String = ""
+    var scheduleEndTime: String = ""
+    var scheduleTitle: String = ""
+    var scheduleContent: String = ""
+    var acceptStatus: String = ""
 
     required convenience init?(map: Map) {
         self.init()
