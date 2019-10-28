@@ -10,7 +10,7 @@ import Foundation
 
 class SchedulesViewModel {
     
-    var schedules = [ScheduleDomain]()
+    var schedules: [ScheduleDomain] = []
 
     init() {}
     
@@ -39,9 +39,9 @@ class SchedulesViewModel {
         Api.Schedules.getSchedules(withPage: 0, numberOfRecordsPerIndex: 10) { result in
             switch result {
             case .success(let trendingResult):
-                print("data : \(trendingResult)")
-                print("Type of: \(type(of: trendingResult))")
-                self.schedules = trendingResult
+                for schedule in trendingResult {
+                    self.schedules.append(schedule)
+                }
                 completion(.success)
             case .failure(let error):
                 completion(.failure(error))

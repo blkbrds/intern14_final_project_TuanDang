@@ -20,10 +20,6 @@ extension Api.Schedules {
         }
     }
     
-//    struct ScheduleResult {
-//        var schedules : [ScheduleDomain]
-//    }
-    
     /**
      * Dummy data to display.
      */
@@ -62,9 +58,7 @@ extension Api.Schedules {
                     if let value = value as? JSObject {
                         var schedules = [ScheduleDomain]()
                         if let data = value["data"] as? JSArray {
-                            print("Response value : \(value)")
                             schedules = Mapper<ScheduleDomain>().mapArray(JSONArray: data)
-                            print("Search result: \(schedules)")
                         }
 
                         completion(.success(schedules))
@@ -78,10 +72,5 @@ extension Api.Schedules {
                 }
             }
         }
-        
-        
-//        print("Go ahead.")
-//        let schedules = getDummyData()
-//        completion(.success(schedules))
     }
 }
