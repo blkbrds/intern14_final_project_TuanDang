@@ -23,6 +23,10 @@ final class Api {
         static let scheduleUrl = "/schedule"
     }
     
+    struct SystemConfig {
+        static var defautPageSize = 10
+    }
+    
     struct Messages {}
     struct Schedules {}
     struct Contacts {}

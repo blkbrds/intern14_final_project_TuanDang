@@ -16,6 +16,7 @@
 		720C27882363001C00BBE05B /* DatingMessengersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27872363001C00BBE05B /* DatingMessengersUITests.swift */; };
 		720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27952363012B00BBE05B /* WelcomeViewController.swift */; };
 		720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720C27962363012B00BBE05B /* WelcomeViewController.xib */; };
+		72428B7E2366F3AC00460607 /* ScheduleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72428B7D2366F3AC00460607 /* ScheduleResult.swift */; };
 		72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E19236351D400F807C8 /* TabbarViewController.swift */; };
 		72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E1A236351D400F807C8 /* TabbarViewController.xib */; };
 		72A47E2B236352C400F807C8 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E29236352C400F807C8 /* MessagesViewController.swift */; };
@@ -95,6 +96,7 @@
 		720C27892363001C00BBE05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720C27952363012B00BBE05B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		720C27962363012B00BBE05B /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		72428B7D2366F3AC00460607 /* ScheduleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResult.swift; sourceTree = "<group>"; };
 		72A47E19236351D400F807C8 /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		72A47E1A236351D400F807C8 /* TabbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabbarViewController.xib; sourceTree = "<group>"; };
 		72A47E29236352C400F807C8 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				72AF069D23645847006EFC5C /* ResponseData.swift */,
 				72AF06A123647228006EFC5C /* RequestData.swift */,
+				72428B7D2366F3AC00460607 /* ScheduleResult.swift */,
 			);
 			path = DataAPI;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				72CD7682236335EE0066DEA9 /* Color.swift in Sources */,
 				72CD7698236337300066DEA9 /* StringExt.swift in Sources */,
 				72CD76882363364F0066DEA9 /* Api.swift in Sources */,
+				72428B7E2366F3AC00460607 /* ScheduleResult.swift in Sources */,
 				72CD768C2363367B0066DEA9 /* Error.swift in Sources */,
 				72AF069E23645847006EFC5C /* ResponseData.swift in Sources */,
 				72CD76BD236348980066DEA9 /* Api.Contacts.swift in Sources */,

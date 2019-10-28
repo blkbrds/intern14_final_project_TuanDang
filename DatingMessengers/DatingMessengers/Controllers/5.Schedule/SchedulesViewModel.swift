@@ -11,6 +11,8 @@ import Foundation
 class SchedulesViewModel {
     
     var schedules: [ScheduleDomain] = []
+    var isNextPage = true
+    var startPage = 0
 
     init() {}
     
@@ -36,11 +38,14 @@ class SchedulesViewModel {
     }
     
     func getSchedules(completion: @escaping APICompletion) {
-        Api.Schedules.getSchedules(withPage: 0, numberOfRecordsPerIndex: 10) { result in
+        Api.Schedules.getSchedules(withPage: startPage, numberOfRecordsPerIndex: Api.SystemConfig.defautPageSize) { result in
             switch result {
-            case .success(let trendingResult):
-                for schedule in trendingResult {
-                    self.schedules.append(schedule)
+            case .success(let schedulesResult):
+                self.schedules.append(contentsOf: schedulesResult.schedules)
+                if (self.startPage * Api.SystemConfig.defautPageSize >= schedulesResult.totalRow) {
+                    self.isNextPage = false
+                } else {
+                    self.startPage += 1
                 }
                 completion(.success)
             case .failure(let error):

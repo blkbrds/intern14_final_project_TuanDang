@@ -37,7 +37,7 @@ extension Api.Schedules {
     /**
      * Get all schedules.
      */
-    static func getSchedules(withPage: Int = 0, numberOfRecordsPerIndex: Int = 10, completion: @escaping Completion<[ScheduleDomain]>) {
+    static func getSchedules(withPage: Int = 0, numberOfRecordsPerIndex: Int = 10, completion: @escaping Completion<ScheduleResult>) {
         
         // MARK: Call to REST url.
         let urlString = self.QueryString().getUserSchedules()
@@ -56,12 +56,19 @@ extension Api.Schedules {
                 switch result {
                 case .success(let value):
                     if let value = value as? JSObject {
-                        var schedules = [ScheduleDomain]()
-                        if let data = value["data"] as? JSArray {
-                            schedules = Mapper<ScheduleDomain>().mapArray(JSONArray: data)
-                        }
 
-                        completion(.success(schedules))
+                        if let searchResult = Mapper<ScheduleResult>().map(JSON: value) {
+                            if let data = value["data"] as? JSArray, let rows = value["total_rows"] as? Int {
+                                let schedules = Mapper<ScheduleDomain>().mapArray(JSONArray: data)
+                                searchResult.schedules = schedules
+                                searchResult.totalRow = rows
+                                completion(.success(searchResult))
+                            }
+                        } else  {
+                            completion(.failure(Api.Error.json))
+                            return
+                        }
+                        
                     } else {
                         completion(.failure(Api.Error.json))
                         return
