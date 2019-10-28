@@ -10,12 +10,13 @@ import Alamofire
 import Foundation
 
 extension ApiManager {
+    
     @discardableResult
     func request(method: HTTPMethod,
                  urlString: URLStringConvertible,
                  parameters: [String: Any]? = nil,
                  headers: [String: String]? = nil,
-                 completion: Completion?) -> Request? {
+                 completion: Completion<Any>?) -> Request? {
         guard Network.shared.isReachable else {
             completion?(.failure(Api.Error.network))
             return nil
@@ -37,9 +38,21 @@ extension ApiManager {
                                         encoding: encoding,
                                         headers: _headers
         ).responseJSON(completion: { (response) in
-            completion?(response.result)
+            if let error = response.error,
+                error.code == Api.Error.connectionAbort.code || error.code == Api.Error.connectionWasLost.code {
+                Alamofire.request(urlString.urlString,
+                                  method: method,
+                                  parameters: parameters,
+                                  encoding: encoding,
+                                  headers: _headers
+                    ).responseJSON { response in
+                        completion?(response.result)
+                }
+            } else {
+                completion?(response.result)
+            }
         })
-
+        
         return request
     }
 }

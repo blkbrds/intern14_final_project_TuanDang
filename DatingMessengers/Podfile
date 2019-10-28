@@ -6,6 +6,7 @@ target 'DatingMessengers' do
   pod 'SwiftUtils'
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'RealmSwift'
 
 
   use_frameworks!
