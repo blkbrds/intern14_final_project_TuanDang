@@ -39,97 +39,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8162B045-0BF9-42BF-81DB-3BCFAAD5FF0C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DatingMessengers/Model/API/Api.Schedules.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FED3FF7F-FF89-4B1A-9A1D-3AF6C54DB616"
+            uuid = "A0AA2E26-9279-407B-8779-D68073F5ED7F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DatingMessengers/Model/API/Api.Schedules.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "FED3FF7F-FF89-4B1A-9A1D-3AF6C54DB616 - e7a0403e9635b179"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.Result&lt;Any&gt;) -&gt; () in static DatingMessengers.Api.Schedules.getSchedules(withPage: Swift.Int, numberOfRecordsPerIndex: Swift.Int, completion: (Alamofire.Result&lt;Swift.Array&lt;DatingMessengers.ScheduleObject&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "DatingMessengers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/SETUP/Project/final_project/DatingMessengers/DatingMessengers/Model/API/Api.Schedules.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "282">
-               </Location>
-               <Location
-                  uuid = "FED3FF7F-FF89-4B1A-9A1D-3AF6C54DB616 - e7a0403e9635b179"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.Result&lt;Any&gt;) -&gt; () in static DatingMessengers.Api.Schedules.getSchedules(withPage: Swift.Int, numberOfRecordsPerIndex: Swift.Int, completion: (Alamofire.Result&lt;Swift.Array&lt;DatingMessengers.ScheduleObject&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "DatingMessengers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/SETUP/Project/final_project/DatingMessengers/DatingMessengers/Model/API/Api.Schedules.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "286">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B4BDE16-988E-463C-9E92-4889275D8A8E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DatingMessengers/Controllers/5.Schedule/SchedulesViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getSchedules(completion:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "getSchedules(withPage:numberOfRecordsPerIndex:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F3EF143A-A0F7-4DAC-8745-50C5FDF1316F"
-            shouldBeEnabled = "No"
+            uuid = "1408DFD8-5F62-4078-9D51-52C59699B94C"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DatingMessengers/Model/API/Api.Schedules.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "getSchedules(withPage:numberOfRecordsPerIndex:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

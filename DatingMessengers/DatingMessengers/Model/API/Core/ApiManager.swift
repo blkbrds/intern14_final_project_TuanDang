@@ -19,7 +19,7 @@ typealias APICompletion = (APIResult) -> Void
 let api = ApiManager()
 
 enum APIResult {
-    case success(Data?)
+    case success
     case failure(Error)
 }
 

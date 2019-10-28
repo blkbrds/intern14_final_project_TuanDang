@@ -21,7 +21,7 @@ extension Api.Schedules {
     }
     
 //    struct ScheduleResult {
-//        var schedules : [ScheduleObject]
+//        var schedules : [ScheduleDomain]
 //    }
     
     /**
@@ -61,13 +61,13 @@ extension Api.Schedules {
                 case .success(let value):
                     if let value = value as? JSObject {
                         var schedules = [ScheduleDomain]()
-                        if let data = value["data"] as? JSObject {
+                        if let data = value["data"] as? JSArray {
                             print("Response value : \(value)")
-                            schedules = Mapper<ScheduleDomain>().mapArray(JSONObject: value)
+                            schedules = Mapper<ScheduleDomain>().mapArray(JSONArray: data)
                             print("Search result: \(schedules)")
                         }
 
-                        completion(.success(schedules)())
+                        completion(.success(schedules))
                     } else {
                         completion(.failure(Api.Error.json))
                         return
@@ -80,8 +80,8 @@ extension Api.Schedules {
         }
         
         
-        print("Go ahead.")
-        let schedules = getDummyData()
-        completion(.success(schedules))
+//        print("Go ahead.")
+//        let schedules = getDummyData()
+//        completion(.success(schedules))
     }
 }

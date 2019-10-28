@@ -9,10 +9,10 @@ import Foundation
 import ObjectMapper
 
 enum AcceptStatus: String {
-    case Accept
-    case Reject
-    case New
-    case Expired
+    case accept
+    case reject
+    case new
+    case expired
 }
 
 final class ScheduleDomain: Mappable {

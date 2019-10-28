@@ -39,10 +39,16 @@ class SchedulesViewController: ViewController {
         scheduleTableView.dataSource = self
         scheduleTableView.delegate = self
         
-        viewModel.getSchedules { _ in
-            DispatchQueue.main.async {
+        viewModel.getSchedules { result in
+            switch result {
+            case .success:
                 self.scheduleTableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
+//            DispatchQueue.main.async {
+//                self.scheduleTableView.reloadData()
+//            }
         }
     }
 }

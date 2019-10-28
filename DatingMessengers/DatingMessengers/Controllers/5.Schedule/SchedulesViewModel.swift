@@ -41,8 +41,8 @@ class SchedulesViewModel {
             case .success(let trendingResult):
                 print("data : \(trendingResult)")
                 print("Type of: \(type(of: trendingResult))")
-//                self.schedules = result.schedules
-                completion(.success(nil))
+                self.schedules = trendingResult
+                completion(.success)
             case .failure(let error):
                 completion(.failure(error))
             }
