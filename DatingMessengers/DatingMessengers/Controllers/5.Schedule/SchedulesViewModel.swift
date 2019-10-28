@@ -10,7 +10,7 @@ import Foundation
 
 class SchedulesViewModel {
     
-    var schedules = [ScheduleObject]()
+    var schedules = [ScheduleDomain]()
 
     init() {}
     

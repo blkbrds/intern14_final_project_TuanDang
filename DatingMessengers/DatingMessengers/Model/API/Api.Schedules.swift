@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 extension Api.Schedules {
     struct QueryString {
@@ -19,9 +20,9 @@ extension Api.Schedules {
         }
     }
     
-    struct ScheduleResult {
-        var schedules : [ScheduleObject]
-    }
+//    struct ScheduleResult {
+//        var schedules : [ScheduleObject]
+//    }
     
     /**
      * Dummy data to display.
@@ -59,15 +60,14 @@ extension Api.Schedules {
                 switch result {
                 case .success(let value):
                     if let value = value as? JSObject {
+                        var schedules = [ScheduleDomain]()
                         if let data = value["data"] as? JSObject {
-                            var schedules = [ScheduleDomain]()
                             print("Response value : \(value)")
-                            let searchResult = ScheduleDomain(json: value)
-                            print("Search result: \(searchResult.id)")
-                            
+                            schedules = Mapper<ScheduleDomain>().mapArray(JSONObject: value)
+                            print("Search result: \(schedules)")
                         }
 
-                        completion(.failure(Api.Error.json))
+                        completion(.success(schedules)())
                     } else {
                         completion(.failure(Api.Error.json))
                         return

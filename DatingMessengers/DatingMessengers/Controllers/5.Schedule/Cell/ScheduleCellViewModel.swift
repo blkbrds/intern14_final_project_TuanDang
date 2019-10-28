@@ -18,7 +18,7 @@ class ScheduleCellViewModel {
     var contentSchedule: String?
     var status: String?
     
-    init(schedule: ScheduleObject) {
+    init(schedule: ScheduleDomain) {
         
         self.scheduleTitle = schedule.scheduleTitle
         self.startDate = schedule.scheduleStartDate
