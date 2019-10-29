@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class ContactsViewController: ViewController {
 
@@ -45,6 +44,19 @@ class ContactsViewController: ViewController {
             }
         }
         
+        viewModel.notificationToken = viewModel.originalContacts.observe { (result) in
+            switch result {
+            case .update(let result, deletions: _, insertions: _, modifications: _):
+                self.contactsTableView.reloadData()
+                print("Display result update : \(result.count)")
+            case .initial(let result):
+                self.contactsTableView.reloadData()
+                print("Display result initial: \(result.count)")
+                break
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        }
         // MARK: Create Realm Observe
 //        let realm = try! Realm()
 //        notificationToken = viewModel.contacts

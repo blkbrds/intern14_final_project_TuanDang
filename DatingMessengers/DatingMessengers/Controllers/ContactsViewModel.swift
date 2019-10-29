@@ -42,12 +42,15 @@ class ContactsViewModel {
             result in
             switch result {
             case .success(let contactsResult):
-//                (self.contactsIndex, self.contacts) = self.createContactsIndex(contactsData: contactsResult)
                 let addedContacts = self.syncResponseDataWithRealm(data: contactsResult)
                 if self.saveRealm(data: addedContacts) == false {
                     // MARK: Show error update to realm.
                     completion(.failure(Api.Error.saveRealmNotSuccess))
                 }
+                
+                // Load data from Realm and set to
+                (self.contactsIndex, self.contacts) = self.createContactsIndex(contactsData: self.originalContacts.reversed())
+
                 completion(.success)
             case .failure(let error):
                 completion(.failure(error))
@@ -80,19 +83,19 @@ class ContactsViewModel {
         return addedObjects
     }
     
-    func test() -> NotificationToken {
-        return originalContacts.observe { (result) in
-            switch result {
-            case .update(let result, deletions: _, insertions: _, modifications: _):
-                print(result.count)
-            case .initial(let result):
-                print(result.count)
-                break
-            case .error(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    func test() -> NotificationToken {
+//        return originalContacts.observe { (result) in
+//            switch result {
+//            case .update(let result, deletions: _, insertions: _, modifications: _):
+//                print(result.count)
+//            case .initial(let result):
+//                print(result.count)
+//                break
+//            case .error(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
     
     /**
      * Demo add object to realm.
@@ -102,7 +105,6 @@ class ContactsViewModel {
         try! realm.write {
             for contact in data {
                 realm.add(contact)
-                print("successful")
             }
         }
         
