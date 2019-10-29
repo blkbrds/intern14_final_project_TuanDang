@@ -32,6 +32,10 @@ extension Api {
         static let emptyData = NSError(domain: Api.Path.baseURL.host, code: 997, message: "Server returns no data")
         static let noResponse = NSError(status: .noResponse)
         static let invalidURL = NSError(domain: Api.Path.baseURL.host, code: 998, message: "Cannot detect URL")
+        
+        // MARK: Error relate to network connection.
+        static let connectionAbort: NSError = NSError(domain: NSPOSIXErrorDomain, code: 53, message: "Software caused connection abort.")
+        static let connectionWasLost: NSError = NSError(domain: NSURLErrorDomain, code: -1_005, message: "The network connection was lost.")
     }
 }
 

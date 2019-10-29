@@ -8,4 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController { }
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // MARK: Call to Layout setting and data.
+        setupUI()
+        setupData()
+    }
+    
+    /**
+     * Required method to setting layout.
+     */
+    func setupUI() { }
+    
+    /**
+     * Config to set data.
+     */
+    func setupData() { }
+}
