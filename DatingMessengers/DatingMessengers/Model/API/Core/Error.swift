@@ -36,8 +36,11 @@ extension Api {
         // MARK: Error relate to network connection.
         static let connectionAbort: NSError = NSError(domain: NSPOSIXErrorDomain, code: 53, message: "Software caused connection abort.")
         static let connectionWasLost: NSError = NSError(domain: NSURLErrorDomain, code: -1_005, message: "The network connection was lost.")
+<<<<<<< HEAD
         
         static let saveRealmNotSuccess = NSError(domain: NSCocoaErrorDomain, message: "Save data to Realm not successful.")
+=======
+>>>>>>> 944898ba0f2604312aedd8c14cbb8d2b2e46a97d
     }
 }
 
