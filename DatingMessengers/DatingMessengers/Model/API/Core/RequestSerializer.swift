@@ -55,20 +55,4 @@ extension ApiManager {
         
         return request
     }
-    
-    /**
-     * Download image from URL.
-     */
-    func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
-        guard let url = URL(string: url) else { return }
-        let config = URLSessionConfiguration.default
-        config.waitsForConnectivity = true
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: url) { (data, response, error) in
-            var image: UIImage?
-            // MARK: Consider after
-            completion(image)
-        }
-        task.resume()
-    }
 }

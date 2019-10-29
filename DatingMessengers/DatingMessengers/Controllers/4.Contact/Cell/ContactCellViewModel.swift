@@ -13,10 +13,12 @@ class ContactCellViewModel {
     var id: String = ""
     var username: String = ""
     var aliasName: String = ""
+    var imgUrl: String = ""
     
     init(contact: ContactDomain) {
         self.id = contact.id
         self.username = contact.username
         self.aliasName = contact.aliasName
+        self.imgUrl = contact.imgUrl
     }
 }

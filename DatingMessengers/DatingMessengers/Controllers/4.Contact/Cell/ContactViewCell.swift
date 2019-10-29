@@ -19,6 +19,7 @@ class ContactViewCell: UITableViewCell {
             if let viewModel = viewModel {
                 aliasNameLabel.text = viewModel.aliasName
                 usernameLabel.text = viewModel.username
+                avatarImageView.dowloadFromServer(link: viewModel.imgUrl, contentMode: .scaleAspectFill)
             }
         }
     }
