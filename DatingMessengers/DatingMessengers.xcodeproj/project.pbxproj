@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0907169C49BD2025FBC3B88C /* Pods_DatingMessengersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3671E00DBDB81136569DCF9 /* Pods_DatingMessengersTests.framework */; };
+		7200C4952365390C00BA96B7 /* LoacationDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7200C4942365390C00BA96B7 /* LoacationDomain.swift */; };
 		720C27662363001800BBE05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27652363001800BBE05B /* AppDelegate.swift */; };
 		720C276F2363001B00BBE05B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720C276E2363001B00BBE05B /* Assets.xcassets */; };
 		720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720C27702363001B00BBE05B /* LaunchScreen.storyboard */; };
@@ -15,6 +16,20 @@
 		720C27882363001C00BBE05B /* DatingMessengersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27872363001C00BBE05B /* DatingMessengersUITests.swift */; };
 		720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27952363012B00BBE05B /* WelcomeViewController.swift */; };
 		720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720C27962363012B00BBE05B /* WelcomeViewController.xib */; };
+		72428B7E2366F3AC00460607 /* ScheduleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72428B7D2366F3AC00460607 /* ScheduleResult.swift */; };
+		72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E19236351D400F807C8 /* TabbarViewController.swift */; };
+		72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E1A236351D400F807C8 /* TabbarViewController.xib */; };
+		72A47E2B236352C400F807C8 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E29236352C400F807C8 /* MessagesViewController.swift */; };
+		72A47E2C236352C400F807C8 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E2A236352C400F807C8 /* MessagesViewController.xib */; };
+		72A47E2F236352E500F807C8 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E2D236352E500F807C8 /* ContactsViewController.swift */; };
+		72A47E30236352E500F807C8 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E2E236352E500F807C8 /* ContactsViewController.xib */; };
+		72A47E332363530800F807C8 /* SchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E312363530800F807C8 /* SchedulesViewController.swift */; };
+		72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E322363530800F807C8 /* SchedulesViewController.xib */; };
+		72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E352363538500F807C8 /* PersonalViewController.swift */; };
+		72A47E382363538500F807C8 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E362363538500F807C8 /* PersonalViewController.xib */; };
+		72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */; };
+		72AF069E23645847006EFC5C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069D23645847006EFC5C /* ResponseData.swift */; };
+		72AF06A223647228006EFC5C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF06A123647228006EFC5C /* RequestData.swift */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -38,6 +53,9 @@
 		72CD76BF236348AC0066DEA9 /* Api.Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76BE236348AC0066DEA9 /* Api.Maps.swift */; };
 		72CD76C1236348B90066DEA9 /* Api.Personally.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD76C0236348B90066DEA9 /* Api.Personally.swift */; };
 		72CD76C323634C3B0066DEA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CD76C223634C3B0066DEA9 /* Default-568h@2x.png */; };
+		72F6448D23635D5B00F8B538 /* SchedulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6448C23635D5B00F8B538 /* SchedulesViewModel.swift */; };
+		72F6448F23635F3400F8B538 /* ScheduleDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6448E23635F3400F8B538 /* ScheduleDomain.swift */; };
+		72F6449123635FF100F8B538 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6449023635FF100F8B538 /* Helper.swift */; };
 		D6EE8620E86D7F84BB78859A /* Pods_DatingMessengers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD2909C650513FFE16A12EE /* Pods_DatingMessengers.framework */; };
 		E691B10D9376D906B872B2AD /* Pods_DatingMessengers_DatingMessengersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A04B668F4736F42F95ECF0 /* Pods_DatingMessengers_DatingMessengersUITests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +82,7 @@
 		09A04B668F4736F42F95ECF0 /* Pods_DatingMessengers_DatingMessengersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingMessengers_DatingMessengersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF5FE90EB5A57CD192AFB2 /* Pods-DatingMessengers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers.debug.xcconfig"; path = "Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers.debug.xcconfig"; sourceTree = "<group>"; };
 		717D6BA950ED83CB841E5821 /* Pods-DatingMessengers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengers/Pods-DatingMessengers.release.xcconfig"; sourceTree = "<group>"; };
+		7200C4942365390C00BA96B7 /* LoacationDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoacationDomain.swift; sourceTree = "<group>"; };
 		720C27622363001800BBE05B /* DatingMessengers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingMessengers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720C27652363001800BBE05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		720C276E2363001B00BBE05B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +96,20 @@
 		720C27892363001C00BBE05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720C27952363012B00BBE05B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		720C27962363012B00BBE05B /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		72428B7D2366F3AC00460607 /* ScheduleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResult.swift; sourceTree = "<group>"; };
+		72A47E19236351D400F807C8 /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		72A47E1A236351D400F807C8 /* TabbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabbarViewController.xib; sourceTree = "<group>"; };
+		72A47E29236352C400F807C8 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		72A47E2A236352C400F807C8 /* MessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
+		72A47E2D236352E500F807C8 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		72A47E2E236352E500F807C8 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		72A47E312363530800F807C8 /* SchedulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewController.swift; sourceTree = "<group>"; };
+		72A47E322363530800F807C8 /* SchedulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulesViewController.xib; sourceTree = "<group>"; };
+		72A47E352363538500F807C8 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		72A47E362363538500F807C8 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellViewModel.swift; sourceTree = "<group>"; };
+		72AF069D23645847006EFC5C /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		72AF06A123647228006EFC5C /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -100,6 +133,9 @@
 		72CD76BE236348AC0066DEA9 /* Api.Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Maps.swift; sourceTree = "<group>"; };
 		72CD76C0236348B90066DEA9 /* Api.Personally.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Personally.swift; sourceTree = "<group>"; };
 		72CD76C223634C3B0066DEA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		72F6448C23635D5B00F8B538 /* SchedulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewModel.swift; sourceTree = "<group>"; };
+		72F6448E23635F3400F8B538 /* ScheduleDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDomain.swift; sourceTree = "<group>"; };
+		72F6449023635FF100F8B538 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		D3671E00DBDB81136569DCF9 /* Pods_DatingMessengersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatingMessengersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2C4BF88533301D24F0EA27 /* Pods-DatingMessengersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengersTests.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengersTests/Pods-DatingMessengersTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC7F6D5D24417DAB64C8EF72 /* Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig"; path = "Target Support Files/Pods-DatingMessengers-DatingMessengersUITests/Pods-DatingMessengers-DatingMessengersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +238,25 @@
 			path = DatingMessengersUITests;
 			sourceTree = "<group>";
 		};
+		729DD9DD23641DC500A4DAE1 /* DataAPI */ = {
+			isa = PBXGroup;
+			children = (
+				72AF069D23645847006EFC5C /* ResponseData.swift */,
+				72AF06A123647228006EFC5C /* RequestData.swift */,
+				72428B7D2366F3AC00460607 /* ScheduleResult.swift */,
+			);
+			path = DataAPI;
+			sourceTree = "<group>";
+		};
+		72CD5EB52363EFDF00972BE0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				72F6448E23635F3400F8B538 /* ScheduleDomain.swift */,
+				7200C4942365390C00BA96B7 /* LoacationDomain.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		72CD767C2363359F0066DEA9 /* Define */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				72CD7692236336FE0066DEA9 /* Ext */,
+				72F6449023635FF100F8B538 /* Helper.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -294,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				72CD769F236338860066DEA9 /* Cell */,
+				72A47E29236352C400F807C8 /* MessagesViewController.swift */,
+				72A47E2A236352C400F807C8 /* MessagesViewController.xib */,
 			);
 			path = 3.Message;
 			sourceTree = "<group>";
@@ -309,6 +367,8 @@
 			isa = PBXGroup;
 			children = (
 				72CD76A12363389E0066DEA9 /* Cell */,
+				72A47E2D236352E500F807C8 /* ContactsViewController.swift */,
+				72A47E2E236352E500F807C8 /* ContactsViewController.xib */,
 			);
 			path = 4.Contact;
 			sourceTree = "<group>";
@@ -324,6 +384,9 @@
 			isa = PBXGroup;
 			children = (
 				72CD76A3236338AF0066DEA9 /* Cell */,
+				72A47E312363530800F807C8 /* SchedulesViewController.swift */,
+				72A47E322363530800F807C8 /* SchedulesViewController.xib */,
+				72F6448C23635D5B00F8B538 /* SchedulesViewModel.swift */,
 			);
 			path = 5.Schedule;
 			sourceTree = "<group>";
@@ -331,6 +394,7 @@
 		72CD76A3236338AF0066DEA9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -339,6 +403,8 @@
 			isa = PBXGroup;
 			children = (
 				72CD76A5236338BE0066DEA9 /* Cell */,
+				72A47E352363538500F807C8 /* PersonalViewController.swift */,
+				72A47E362363538500F807C8 /* PersonalViewController.xib */,
 			);
 			path = 6.MyPage;
 			sourceTree = "<group>";
@@ -369,6 +435,8 @@
 		72CD76AC23633A6F0066DEA9 /* 2.Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				72A47E19236351D400F807C8 /* TabbarViewController.swift */,
+				72A47E1A236351D400F807C8 /* TabbarViewController.xib */,
 			);
 			path = 2.Tabbar;
 			sourceTree = "<group>";
@@ -385,6 +453,8 @@
 		72CD76AE23633AF80066DEA9 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
+				729DD9DD23641DC500A4DAE1 /* DataAPI */,
+				72CD5EB52363EFDF00972BE0 /* Domain */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -519,9 +589,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A47E30236352E500F807C8 /* ContactsViewController.xib in Resources */,
+				72A47E2C236352C400F807C8 /* MessagesViewController.xib in Resources */,
 				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
+				72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */,
 				72CD76C323634C3B0066DEA9 /* Default-568h@2x.png in Resources */,
+				72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */,
 				720C276F2363001B00BBE05B /* Assets.xcassets in Resources */,
+				72A47E382363538500F807C8 /* PersonalViewController.xib in Resources */,
 				720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,26 +727,39 @@
 			files = (
 				72CD768A2363365D0066DEA9 /* ApiManager.swift in Sources */,
 				72CD76B723633BCA0066DEA9 /* ViewController.swift in Sources */,
+				7200C4952365390C00BA96B7 /* LoacationDomain.swift in Sources */,
+				72A47E2B236352C400F807C8 /* MessagesViewController.swift in Sources */,
 				72CD767E236335C90066DEA9 /* App.swift in Sources */,
+				72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */,
 				72CD76B123633B560066DEA9 /* TableCell.swift in Sources */,
 				72CD76BF236348AC0066DEA9 /* Api.Maps.swift in Sources */,
+				72F6449123635FF100F8B538 /* Helper.swift in Sources */,
+				72F6448D23635D5B00F8B538 /* SchedulesViewModel.swift in Sources */,
+				72A47E332363530800F807C8 /* SchedulesViewController.swift in Sources */,
 				720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */,
+				72AF06A223647228006EFC5C /* RequestData.swift in Sources */,
 				72CD76B9236348660066DEA9 /* Api.Messages.swift in Sources */,
 				72CD7684236336140066DEA9 /* Font.swift in Sources */,
 				72CD7680236335E20066DEA9 /* String.swift in Sources */,
 				72CD769A236337450066DEA9 /* UIViewControllerExt.swift in Sources */,
 				72CD76B523633BA70066DEA9 /* Button.swift in Sources */,
+				72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */,
+				72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */,
 				72CD76942363370A0066DEA9 /* InputViewExt.swift in Sources */,
+				72A47E2F236352E500F807C8 /* ContactsViewController.swift in Sources */,
 				72CD768E236336970066DEA9 /* RequestSerializer.swift in Sources */,
 				72CD7690236336AD0066DEA9 /* ResponseSerializer.swift in Sources */,
 				72CD76962363371A0066DEA9 /* MapperExt.swift in Sources */,
+				72F6448F23635F3400F8B538 /* ScheduleDomain.swift in Sources */,
 				72CD76BB2363488A0066DEA9 /* Api.Schedules.swift in Sources */,
 				72CD76C1236348B90066DEA9 /* Api.Personally.swift in Sources */,
 				72CD76B323633B860066DEA9 /* CollectionCell.swift in Sources */,
 				72CD7682236335EE0066DEA9 /* Color.swift in Sources */,
 				72CD7698236337300066DEA9 /* StringExt.swift in Sources */,
 				72CD76882363364F0066DEA9 /* Api.swift in Sources */,
+				72428B7E2366F3AC00460607 /* ScheduleResult.swift in Sources */,
 				72CD768C2363367B0066DEA9 /* Error.swift in Sources */,
+				72AF069E23645847006EFC5C /* ResponseData.swift in Sources */,
 				72CD76BD236348980066DEA9 /* Api.Contacts.swift in Sources */,
 				720C27662363001800BBE05B /* AppDelegate.swift in Sources */,
 			);
