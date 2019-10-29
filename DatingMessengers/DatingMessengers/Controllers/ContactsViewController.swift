@@ -92,7 +92,7 @@ extension ContactsViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myIdentity, for: indexPath) as? ContactViewCell else {
             return UITableViewCell()
         }
-        cell.userName.text = viewModel.contacts[indexPath.section][indexPath.row].username
+        cell.viewModel = viewModel.getCellModel(at: indexPath)
         return cell
     }
     

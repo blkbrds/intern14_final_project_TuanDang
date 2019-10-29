@@ -110,8 +110,8 @@
             filePath = "DatingMessengers/Controllers/ContactsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "getContacts(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "DatingMessengers/Controllers/ContactsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "getContacts(completion:)"
             landmarkType = "7">
             <Locations>
@@ -174,58 +174,10 @@
             filePath = "DatingMessengers/Controllers/ContactsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "getContacts(completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CC890065-9DEF-4507-9173-64D281F83CFB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DatingMessengers/Model/API/Api.Contacts.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "getContacts(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CC890065-9DEF-4507-9173-64D281F83CFB - e52dc937d6e8e4ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.Result&lt;Any&gt;) -&gt; () in static DatingMessengers.Api.Contacts.getContacts(completion: (Alamofire.Result&lt;Swift.Array&lt;DatingMessengers.ContactDomain&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "DatingMessengers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/SETUP/Project/final_project/DatingMessengers/DatingMessengers/Model/API/Api.Contacts.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  uuid = "CC890065-9DEF-4507-9173-64D281F83CFB - e52dc937d6e8e4ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.Result&lt;Any&gt;) -&gt; () in static DatingMessengers.Api.Contacts.getContacts(completion: (Alamofire.Result&lt;Swift.Array&lt;DatingMessengers.ContactDomain&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "DatingMessengers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/SETUP/Project/final_project/DatingMessengers/DatingMessengers/Model/API/Api.Contacts.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "192">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

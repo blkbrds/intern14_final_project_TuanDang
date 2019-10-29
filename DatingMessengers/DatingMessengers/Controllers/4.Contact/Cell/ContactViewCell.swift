@@ -8,16 +8,20 @@
 
 import UIKit
 
-protocol ContactViewCellDelegate: class {
-    func tapButtonClick(view: ContactViewCell)
-}
-
 class ContactViewCell: UITableViewCell {
-    @IBOutlet weak var userName: UILabel!
-    var indexPath: IndexPath?
-    weak var delegate: ContactViewCellDelegate?
+
+    @IBOutlet weak var aliasNameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
-    var viewModel: ContactCellViewModel?
+    var viewModel: ContactCellViewModel? {
+        didSet {
+            if let viewModel = viewModel {
+                aliasNameLabel.text = viewModel.aliasName
+                usernameLabel.text = viewModel.username
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,8 +32,5 @@ class ContactViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    @IBAction func tapMeButtonClick(_ sender: UIButton) {
-        delegate?.tapButtonClick(view: self)
     }
 }

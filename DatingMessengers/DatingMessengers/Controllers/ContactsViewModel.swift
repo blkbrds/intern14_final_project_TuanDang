@@ -34,6 +34,9 @@ class ContactsViewModel {
 //        let result = ContactCellViewModel(contact: ContactDomain())
 //        return result
 //    }
+    func getCellModel(at: IndexPath) -> ContactCellViewModel {
+        return ContactCellViewModel(contact: contacts[at.section][at.row])
+    }
     
     func getContacts(completion: @escaping APICompletion) {
         
