@@ -6,64 +6,85 @@
 //  Copyright © 2019 MBA0051. All rights reserved.
 //
 
+// MARK: Checked and re-use realm manager from other member.
 import Foundation
 import RealmSwift
 
-class RealmManager {
+final class RealmManager {
+    static var shared = RealmManager()
+    private let realm: Realm? = {
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let url = documentDirectory.appendingPathComponent("Dating.realm")
+            return try Realm(fileURL: url)
+        } catch {
+            return nil
+        }
+    }()
     
-    /**
-     * Add object to realm
-     */
-    static func addObjectToRealm() -> Bool {
-        return true
+    private init() { }
+}
+
+extension RealmManager {
+    private func write(_ closesure: () -> Void, completion: ((RealmResult) -> Void)? = nil) {
+        realm?.beginWrite()
+        closesure()
+        do {
+            try realm?.commitWrite()
+            completion?(.success)
+        } catch {
+            realm?.cancelWrite()
+            completion?(.failure(error))
+        }
     }
-    
-    /**
-    * Add list objects to realm
-    */
-    static func addListObjectsToRealm() -> Bool {
-        return true
+
+    func fetchObjects<T: Object>(_ type: T.Type, filter predicate: NSPredicate? = nil) -> Results<T>? {
+        guard let predicate = predicate else {
+            return realm?.objects(type)
+        }
+        return realm?.objects(type).filter(predicate)
     }
-    
-    /**
-     * Fetch object by ID or another conditions.
-     */
-    static func getObjectFromRealm() {
-        
+
+    func fetchObject<T: Object>(_ type: T.Type, filter predicate: NSPredicate? = nil) -> T? {
+        let results = fetchObjects(type, filter: predicate)
+        return results?.first
     }
-    
-    /**
-     * Fetch all objects by object type (Table name).
-     */
-    static func getAllFromRealm() {
-        
+
+    func add<T: Object>(object: T, completion: ((RealmResult) -> Void)? = nil) {
+        write({
+            realm?.add(object)
+        }, completion: completion)
     }
-    
-    /**
-     * Update object.
-     */
-    static func updateObjectToRealm() {
-        
+
+    func add<T: Object>(objects: [T], completion: ((RealmResult) -> Void)? = nil) {
+        write({
+            realm?.add(objects)
+        }, completion: completion)
     }
-    
-    /**
-     * Update list object.
-     */
-    static func updateListObjectsToRealm() {
-        
+
+    func delete<T: Object>(object: T, completion: ((RealmResult) -> Void)? = nil) {
+        write({
+            realm?.delete(object)
+        }, completion: completion)
     }
-    
-    /**
-     * Delete object by Id.
-     */
-    static func deleteObjectFromReal() -> Bool {
-        return true
+
+    func deleteAll<T: Object>(objects: [T], completion: ((RealmResult) -> Void)? = nil) {
+        write({
+            realm?.delete(objects)
+        }, completion: completion)
     }
-    
-    /**
-     * Delete all object by type.
-     */
-    static func deleteAllObjectsFromReal() -> Bool {
-        return true
+
+    func observe<T: Object>(type: T.Type, completion: @escaping (RealmCollectionChange<Results<T>>) -> Void) -> NotificationToken? {
+        let notificationToken = realm?.objects(type).observe({ (change) in
+            completion(change)
+        })
+        return notificationToken
+    }
+}
+
+extension RealmManager {
+    enum RealmResult {
+        case success
+        case failure(Error)
     }
 }

@@ -18,7 +18,6 @@ class ContactsViewModel {
 
     var isNextPage = true
     var startPage = 0
-    let plistName = "ContactsFile"
     
     init() { }
     
@@ -30,10 +29,15 @@ class ContactsViewModel {
         return contacts[section].count
     }
     
-//    func cellViewModel(at: IndexPath) -> ContactCellViewModel {
-//        let result = ContactCellViewModel(contact: ContactDomain())
-//        return result
-//    }
+    func getHeader(at: Int) -> String? {
+        if contactsIndex.count > 0 {
+            return contactsIndex[at]
+        } else { return nil }
+    }
+    
+    func getSectionIndex() -> [String]? {
+        return self.contactsIndex
+    }
     func getCellModel(at: IndexPath) -> ContactCellViewModel {
         return ContactCellViewModel(contact: contacts[at.section][at.row])
     }
@@ -68,8 +72,6 @@ class ContactsViewModel {
         var sameValue = false
         var addedObjects: [ContactDomain] = []
         
-        print("have total \(originalContacts.count) records")
-        
         for domain in data {
             sameValue = false
             for contact in originalContacts {
@@ -82,26 +84,10 @@ class ContactsViewModel {
                 addedObjects.append(domain)
             }
         }
-        
         return addedObjects
     }
-    
-//    func test() -> NotificationToken {
-//        return originalContacts.observe { (result) in
-//            switch result {
-//            case .update(let result, deletions: _, insertions: _, modifications: _):
-//                print(result.count)
-//            case .initial(let result):
-//                print(result.count)
-//                break
-//            case .error(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
     /**
-     * Demo add object to realm.
+     * Storage data to realm
      */
     private func saveRealm(data: [ContactDomain]) -> Bool {
         let realm = try! Realm()
@@ -110,22 +96,7 @@ class ContactsViewModel {
                 realm.add(contact)
             }
         }
-        
-//        let domain = ContactDomain.add(id: "3", username: "my username", alias: "Ten cua mot nguoi", img: "abcd.png")
-//        print("Content save to Realm as bellow: ")
-//        print("ID: \(domain.id)")
-//        print("User name: \(domain.username)")
-//        print("Alias name: \(domain.aliasName)")
-//        print("IMG: \(domain.imgUrl)")
-//        let data = ContactDomain(id: "4", username: "asdf", alias: "sdf", img: "sdfwe")
         return true
-    }
-    
-    private func loadArrayFromPlist(plistName: String) -> [String] {
-        let emptyArray: [String] = []
-        guard let path = Bundle.main.url(forResource: plistName, withExtension: "plist") else { return emptyArray }
-        guard let userData = NSArray(contentsOf: path) as? [String] else { return emptyArray }
-        return userData
     }
     
     /**

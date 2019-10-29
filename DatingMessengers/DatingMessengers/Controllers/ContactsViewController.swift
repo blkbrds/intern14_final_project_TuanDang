@@ -8,12 +8,24 @@
 
 import UIKit
 
+enum ContactIdentity: String {
+    case table
+    case cell
+    case nib
+    
+    var name: String {
+        switch self {
+        case .table: return "ContactsTable"
+        case .cell: return "ContactCell"
+        case .nib: return "ContactTableViewCell"
+        }
+    }
+}
+
 class ContactsViewController: ViewController {
 
     @IBOutlet weak var contactsTableView: UITableView!
     var viewModel = ContactsViewModel()
-    let myIdentity = "myTableView"
-    let nibFileName = "ContactViewCell"
     
     // MARK: Notification from Realm
     
@@ -30,9 +42,8 @@ class ContactsViewController: ViewController {
     override func setupData() {
 
         // MARK: Load data from server.
-        
-        let nib = UINib(nibName: nibFileName, bundle: nil)
-        contactsTableView.register(nib, forCellReuseIdentifier: myIdentity)
+        let nib = UINib(nibName: ContactIdentity.nib.name, bundle: nil)
+        contactsTableView.register(nib, forCellReuseIdentifier: ContactIdentity.table.name)
         contactsTableView.dataSource = self
         
         viewModel.getContacts { result in
@@ -44,37 +55,20 @@ class ContactsViewController: ViewController {
             }
         }
         
+        // MARK: Create Realm Observe
         viewModel.notificationToken = viewModel.originalContacts.observe { (result) in
             switch result {
-            case .update(let result, deletions: _, insertions: _, modifications: _):
+            case .update(_, deletions: _, insertions: _, modifications: _):
                 self.contactsTableView.reloadData()
-                print("Display result update : \(result.count)")
-            case .initial(let result):
+                print("Display result update.")
+            case .initial(_):
                 self.contactsTableView.reloadData()
-                print("Display result initial: \(result.count)")
+                print("Display result initial.")
                 break
             case .error(let error):
                 print(error.localizedDescription)
             }
         }
-        // MARK: Create Realm Observe
-//        let realm = try! Realm()
-//        notificationToken = viewModel.contacts
-        
-//        (viewModel.contactsIndex, viewModel.contacts) = createContactsIndex()
-    }
-    
-    func loadGroupArrayFromPlist(plistName: String) -> [[String]] {
-        var groupArray: [[String]] = [[]]
-        guard let path = Bundle.main.url(forResource: plistName, withExtension: "plist") else { return groupArray }
-        guard let animalsPlist = NSArray(contentsOf: path) as? [Any]  else { return groupArray }
-        
-        for index in 0..<animalsPlist.count {
-            guard let myArray = animalsPlist[index] as? [String] else { return groupArray }
-            groupArray.append(myArray)
-        }
-        groupArray.remove(at: 0)
-        return groupArray
     }
 }
 
@@ -89,7 +83,7 @@ extension ContactsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: myIdentity, for: indexPath) as? ContactViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactIdentity.cell.name, for: indexPath) as? ContactViewCell else {
             return UITableViewCell()
         }
         cell.viewModel = viewModel.getCellModel(at: indexPath)
@@ -100,16 +94,14 @@ extension ContactsViewController: UITableViewDataSource {
      * Setting header section.
      */
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if viewModel.contactsIndex.count > 0 {
-            return viewModel.contactsIndex[section]
-        } else { return nil }
+        return viewModel.getHeader(at: section)
     }
     
     /**
      * Index content.
      */
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return  viewModel.contactsIndex
+        return viewModel.getSectionIndex()
     }
     
     /*
