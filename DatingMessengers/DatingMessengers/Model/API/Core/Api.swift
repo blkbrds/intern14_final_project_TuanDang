@@ -21,6 +21,7 @@ final class Api {
         #endif
         
         static let scheduleUrl = "/schedule"
+        static let contactUrl = "/contact"
     }
     
     struct SystemConfig {

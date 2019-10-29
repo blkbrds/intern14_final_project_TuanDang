@@ -16,6 +16,9 @@ class ContactViewCell: UITableViewCell {
     @IBOutlet weak var userName: UILabel!
     var indexPath: IndexPath?
     weak var delegate: ContactViewCellDelegate?
+    
+    var viewModel: ContactCellViewModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

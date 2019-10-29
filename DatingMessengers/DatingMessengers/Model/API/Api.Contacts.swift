@@ -7,7 +7,43 @@
 //
 
 import Foundation
+import ObjectMapper
 
 extension Api.Contacts {
-    
+ 
+    struct QueryString {
+
+        /**
+         * Get API URL.
+         */
+        func getUserContacts() -> String {
+            return Api.Path.baseURL + Api.Path.contactUrl + "/list"
+        }
+    }
+
+    /**
+     * Get all schedules.
+     */
+    static func getContacts(completion: @escaping Completion<[ContactDomain]>) {
+        
+        // MARK: Call to REST url.
+        let urlString = self.QueryString().getUserContacts()
+        
+        api.request(method: .get, urlString: urlString) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let value):
+                    if let value = value as? JSArray {
+                        let contacts = Mapper<ContactDomain>().mapArray(JSONArray: value)
+                        completion(.success(contacts))
+                    } else {
+                        completion(.failure(Api.Error.json))
+                        return
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }

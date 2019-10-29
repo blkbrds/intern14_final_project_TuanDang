@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContactsViewController: ViewController {
 
     @IBOutlet weak var contactsTableView: UITableView!
     var viewModel = ContactsViewModel()
-    let plistName = "ContactsFile"
     let myIdentity = "myTableView"
     let nibFileName = "ContactViewCell"
+    
+    // MARK: Notification from Realm
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,50 +31,25 @@ class ContactsViewController: ViewController {
     override func setupData() {
 
         // MARK: Load data from server.
-//        (contactsIndex, contacts) = createContactsIndex()
+        
         let nib = UINib(nibName: nibFileName, bundle: nil)
         contactsTableView.register(nib, forCellReuseIdentifier: myIdentity)
         contactsTableView.dataSource = self
-    }
-    
-    /**
-     * Sort by name.
-     */
-    private func createContactsIndex() -> ([String], [[String]]) {
         
-        let animalsData = loadArrayFromPlist(plistName: plistName)
-        var tempData: [[String]] = [[]]
-        var tempIndex: [String] = []
-        // Create index by prefix animal name.
-        tempData.remove(at: 0)
-        for animalName in animalsData {
-                var foundPrefix = false
-                for prefix in 0..<tempIndex.count {
-                    if animalName.prefix(1).elementsEqual(tempIndex[prefix]) {
-                        tempData[prefix].append(animalName)
-                        foundPrefix = true
-                        break
-                    }
-                }
-                if foundPrefix == false {
-                    tempIndex.append(String(animalName.prefix(1)))
-                    var temp: [String] = []
-                    temp.append(animalName)
-                    tempData.append(temp)
-                }
-        }
-        
-        // Sort by Alphabe
-        for index in 0..<tempIndex.count-1 {
-            for target in (index+1)..<tempIndex.count {
-                if tempIndex[index].compare(tempIndex[target]).rawValue == 1 {
-                    (tempIndex[index], tempIndex[target]) = (tempIndex[target], tempIndex[index])
-                    (tempData[index], tempData[target]) = (tempData[target], tempData[index])
-                }
+        viewModel.getContacts { result in
+            switch result {
+            case .success:
+                self.contactsTableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
         }
         
-        return (tempIndex, tempData)
+        // MARK: Create Realm Observe
+//        let realm = try! Realm()
+//        notificationToken = viewModel.contacts
+        
+//        (viewModel.contactsIndex, viewModel.contacts) = createContactsIndex()
     }
     
     func loadGroupArrayFromPlist(plistName: String) -> [[String]] {
@@ -85,20 +63,6 @@ class ContactsViewController: ViewController {
         }
         groupArray.remove(at: 0)
         return groupArray
-    }
-    
-    func loadArrayFromPlist(plistName: String) -> [String] {
-        let emptyArray: [String] = []
-        guard let path = Bundle.main.url(forResource: plistName, withExtension: "plist") else { return emptyArray }
-        guard let userData = NSArray(contentsOf: path) as? [String] else { return emptyArray }
-        return userData
-    }
-}
-
-extension ContactsViewController: ContactViewCellDelegate {
-    func tapButtonClick(view: ContactViewCell) {
-        guard let rowIndex = view.indexPath?.row else { return }
-        print("Tap me : \(String(rowIndex))")
     }
 }
 
@@ -116,7 +80,7 @@ extension ContactsViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myIdentity, for: indexPath) as? ContactViewCell else {
             return UITableViewCell()
         }
-        cell.userName.text = viewModel.cellViewModel(at: indexPath).username
+        cell.userName.text = viewModel.contacts[indexPath.section][indexPath.row].username
         return cell
     }
     
@@ -124,7 +88,9 @@ extension ContactsViewController: UITableViewDataSource {
      * Setting header section.
      */
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.contactsIndex[section]
+        if viewModel.contactsIndex.count > 0 {
+            return viewModel.contactsIndex[section]
+        } else { return nil }
     }
     
     /**

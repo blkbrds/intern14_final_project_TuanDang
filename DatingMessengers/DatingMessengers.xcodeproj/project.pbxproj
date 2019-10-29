@@ -16,6 +16,7 @@
 		720C27882363001C00BBE05B /* DatingMessengersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27872363001C00BBE05B /* DatingMessengersUITests.swift */; };
 		720C27972363012B00BBE05B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C27952363012B00BBE05B /* WelcomeViewController.swift */; };
 		720C27982363012B00BBE05B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720C27962363012B00BBE05B /* WelcomeViewController.xib */; };
+		720E736C236822E8009092A9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720E736B236822E8009092A9 /* RealmManager.swift */; };
 		72428B7E2366F3AC00460607 /* ScheduleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72428B7D2366F3AC00460607 /* ScheduleResult.swift */; };
 		72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A47E19236351D400F807C8 /* TabbarViewController.swift */; };
 		72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A47E1A236351D400F807C8 /* TabbarViewController.xib */; };
@@ -103,6 +104,7 @@
 		720C27892363001C00BBE05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720C27952363012B00BBE05B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		720C27962363012B00BBE05B /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		720E736B236822E8009092A9 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		72428B7D2366F3AC00460607 /* ScheduleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResult.swift; sourceTree = "<group>"; };
 		72A47E19236351D400F807C8 /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		72A47E1A236351D400F807C8 /* TabbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabbarViewController.xib; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		720C27642363001800BBE05B /* DatingMessengers */ = {
 			isa = PBXGroup;
 			children = (
+				720E736A23681BD3009092A9 /* Managers */,
 				72CD76AD23633AA90066DEA9 /* Model */,
 				72CD769C236337A60066DEA9 /* AppDelegate */,
 				72CD769D236337CF0066DEA9 /* Controllers */,
@@ -250,6 +253,14 @@
 				720C27892363001C00BBE05B /* Info.plist */,
 			);
 			path = DatingMessengersUITests;
+			sourceTree = "<group>";
+		};
+		720E736A23681BD3009092A9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				720E736B236822E8009092A9 /* RealmManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		729DD9DD23641DC500A4DAE1 /* DataAPI */ = {
@@ -754,6 +765,7 @@
 				7200C4952365390C00BA96B7 /* LoacationDomain.swift in Sources */,
 				72FDE77A23674AC90011CBD8 /* ContactsViewController.swift in Sources */,
 				72A47E2B236352C400F807C8 /* MessagesViewController.swift in Sources */,
+				720E736C236822E8009092A9 /* RealmManager.swift in Sources */,
 				72CD767E236335C90066DEA9 /* App.swift in Sources */,
 				72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */,
 				72CD76B123633B560066DEA9 /* TableCell.swift in Sources */,
