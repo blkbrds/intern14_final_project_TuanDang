@@ -30,6 +30,8 @@
 		72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */; };
 		72AF069E23645847006EFC5C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069D23645847006EFC5C /* ResponseData.swift */; };
 		72AF06A223647228006EFC5C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF06A123647228006EFC5C /* RequestData.swift */; };
+		72C068B02369332600120E66 /* SearchContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C068AE2369332600120E66 /* SearchContactsViewController.swift */; };
+		72C068B12369332600120E66 /* SearchContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C068AF2369332600120E66 /* SearchContactsViewController.xib */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -118,6 +120,8 @@
 		72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellViewModel.swift; sourceTree = "<group>"; };
 		72AF069D23645847006EFC5C /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		72AF06A123647228006EFC5C /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		72C068AE2369332600120E66 /* SearchContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContactsViewController.swift; sourceTree = "<group>"; };
+		72C068AF2369332600120E66 /* SearchContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchContactsViewController.xib; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -273,6 +277,15 @@
 			path = DataAPI;
 			sourceTree = "<group>";
 		};
+		72C068AD2369330000120E66 /* SearchContacts */ = {
+			isa = PBXGroup;
+			children = (
+				72C068AE2369332600120E66 /* SearchContactsViewController.swift */,
+				72C068AF2369332600120E66 /* SearchContactsViewController.xib */,
+			);
+			path = SearchContacts;
+			sourceTree = "<group>";
+		};
 		72CD5EB52363EFDF00972BE0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +409,7 @@
 		72CD76A0236338950066DEA9 /* 4.Contact */ = {
 			isa = PBXGroup;
 			children = (
+				72C068AD2369330000120E66 /* SearchContacts */,
 				72CD76A12363389E0066DEA9 /* Cell */,
 			);
 			path = 4.Contact;
@@ -627,6 +641,7 @@
 				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
 				72FDE77B23674AC90011CBD8 /* ContactsViewController.xib in Resources */,
 				72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */,
+				72C068B12369332600120E66 /* SearchContactsViewController.xib in Resources */,
 				72CD76C323634C3B0066DEA9 /* Default-568h@2x.png in Resources */,
 				72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */,
 				720C276F2363001B00BBE05B /* Assets.xcassets in Resources */,
@@ -800,6 +815,7 @@
 				72CD768C2363367B0066DEA9 /* Error.swift in Sources */,
 				72AF069E23645847006EFC5C /* ResponseData.swift in Sources */,
 				72CD76BD236348980066DEA9 /* Api.Contacts.swift in Sources */,
+				72C068B02369332600120E66 /* SearchContactsViewController.swift in Sources */,
 				72FDE783236755CF0011CBD8 /* ContactsViewModel.swift in Sources */,
 				720C27662363001800BBE05B /* AppDelegate.swift in Sources */,
 			);

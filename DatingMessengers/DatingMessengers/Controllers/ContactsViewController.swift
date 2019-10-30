@@ -68,6 +68,16 @@ class ContactsViewController: ViewController {
             }
         }
     }
+
+    @IBAction func addContactButtonClick(_ sender: UIButton) {
+        let searchUserView = SearchContactsViewController()
+        searchUserView.delegate = self
+        searchUserView.modalPresentationStyle = .overFullScreen
+        searchUserView.modalTransitionStyle = .coverVertical
+        self.present(searchUserView, animated: true, completion: {
+            // MARK: Do something.
+        })
+    }
 }
 
 extension ContactsViewController: UITableViewDataSource {
@@ -107,5 +117,16 @@ extension ContactsViewController: UITableViewDataSource {
      */
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
+    }
+}
+
+extension ContactsViewController: SearchContactsViewDelegate {
+    func addButtonClick(view: SearchContactsViewController, usersSelected usersId: [String]?) {
+        print("User id: \(String(describing: usersId?[0]))")
+        print("close page")
+    }
+    
+    func cancelButtonClick(view: SearchContactsViewController) {
+        view.dismiss(animated: true, completion: nil)
     }
 }

@@ -19,29 +19,71 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jx-K7-Qhh">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <items>
-                        <navigationItem title="Title" id="jj5-pG-GZ9"/>
-                    </items>
-                </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwd-zY-7Ru">
                     <rect key="frame" x="0.0" y="88" width="414" height="730"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-Ze-z5R">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Usd-kI-tKh">
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xz7-98-5CR">
+                                    <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Xz7-98-5CR" secondAttribute="bottom" id="DfR-ur-slV"/>
+                                <constraint firstItem="Xz7-98-5CR" firstAttribute="top" secondItem="Usd-kI-tKh" secondAttribute="top" id="LY6-8n-b5F"/>
+                                <constraint firstAttribute="trailing" secondItem="Xz7-98-5CR" secondAttribute="trailing" id="QB2-Ir-v3w"/>
+                                <constraint firstItem="Xz7-98-5CR" firstAttribute="leading" secondItem="Usd-kI-tKh" secondAttribute="leading" id="bB4-Ef-Vdw"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBG-Pe-DJL">
+                            <rect key="frame" x="368" y="0.0" width="46" height="44"/>
+                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="+">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="addContactButtonClick:" destination="-1" eventType="touchUpInside" id="oAR-h5-5K6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="Usd-kI-tKh" firstAttribute="height" secondItem="mpT-Ze-z5R" secondAttribute="height" id="1ho-DS-WXZ"/>
+                        <constraint firstItem="Usd-kI-tKh" firstAttribute="centerY" secondItem="mpT-Ze-z5R" secondAttribute="centerY" id="3c1-gl-OkW"/>
+                        <constraint firstItem="Usd-kI-tKh" firstAttribute="height" secondItem="mpT-Ze-z5R" secondAttribute="height" id="7Ia-mr-omA"/>
+                        <constraint firstItem="iBG-Pe-DJL" firstAttribute="height" secondItem="mpT-Ze-z5R" secondAttribute="height" id="NEF-9c-biX"/>
+                        <constraint firstAttribute="trailing" secondItem="iBG-Pe-DJL" secondAttribute="trailing" id="QT8-Nz-SPc"/>
+                        <constraint firstItem="Usd-kI-tKh" firstAttribute="leading" secondItem="mpT-Ze-z5R" secondAttribute="leading" id="R23-vb-sK3"/>
+                        <constraint firstAttribute="trailing" secondItem="Usd-kI-tKh" secondAttribute="trailing" constant="48" id="Wt2-eA-RJs"/>
+                        <constraint firstItem="iBG-Pe-DJL" firstAttribute="height" secondItem="Usd-kI-tKh" secondAttribute="height" id="gei-5D-B9h"/>
+                        <constraint firstItem="iBG-Pe-DJL" firstAttribute="leading" secondItem="Usd-kI-tKh" secondAttribute="trailing" constant="2" id="qvf-SJ-2H2"/>
+                        <constraint firstItem="iBG-Pe-DJL" firstAttribute="centerY" secondItem="Usd-kI-tKh" secondAttribute="centerY" id="xgM-e1-dnr"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gwd-zY-7Ru" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="0gg-dv-VDL"/>
-                <constraint firstItem="3Jx-K7-Qhh" firstAttribute="leading" secondItem="gwd-zY-7Ru" secondAttribute="leading" id="8YV-GV-RfE"/>
                 <constraint firstItem="gwd-zY-7Ru" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="97m-n8-UEH"/>
-                <constraint firstItem="3Jx-K7-Qhh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QRA-Lw-Zme"/>
+                <constraint firstItem="gwd-zY-7Ru" firstAttribute="top" secondItem="mpT-Ze-z5R" secondAttribute="bottom" id="IrQ-cZ-1bc"/>
                 <constraint firstItem="gwd-zY-7Ru" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="R0y-uV-QKd"/>
-                <constraint firstItem="gwd-zY-7Ru" firstAttribute="top" secondItem="3Jx-K7-Qhh" secondAttribute="bottom" id="XmM-S2-ixk"/>
-                <constraint firstItem="3Jx-K7-Qhh" firstAttribute="trailing" secondItem="gwd-zY-7Ru" secondAttribute="trailing" id="wWO-N7-PtI"/>
+                <constraint firstItem="mpT-Ze-z5R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TZe-A7-kE1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gwd-zY-7Ru" secondAttribute="bottom" constant="44" id="Tt8-df-UtQ"/>
+                <constraint firstItem="mpT-Ze-z5R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a4f-CU-qn4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mpT-Ze-z5R" secondAttribute="trailing" id="bHW-Uz-Icg"/>
+                <constraint firstItem="mpT-Ze-z5R" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bW2-B7-b0b"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="131"/>
+            <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
         </view>
     </objects>
 </document>
