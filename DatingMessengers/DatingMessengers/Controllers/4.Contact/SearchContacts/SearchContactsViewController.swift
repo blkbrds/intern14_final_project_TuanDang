@@ -33,7 +33,10 @@ class SearchContactsViewController: UIViewController {
      * Required method to setting layout.
      */
     func setupUI() {
-        userSearchBar.returnKeyType = .done
+        userFoundTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Myidentity")
+        userFoundTableView.dataSource = self
+
+        userSearchBar.returnKeyType = .search
         userSearchBar.delegate = self
     }
     
@@ -58,14 +61,29 @@ extension SearchContactsViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         print("Start search")
 
-        viewModel.searchUser(byName: userSearchBar.text, byAlias: userSearchBar.text) { result in
+        viewModel.searchUser(by: userSearchBar.text) { result in
             switch result {
             case .success:
-//                self.contactsTableView.reloadData()
+                self.userFoundTableView.reloadData()
                 break;
             case .failure(let error):
                 print(error)
             }
         }
     }
+}
+
+extension SearchContactsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRowsInSection()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Myidentity", for: indexPath)
+        cell.textLabel?.text = viewModel.cellModel(at: indexPath)
+        return cell
+    }
+    
+    
 }

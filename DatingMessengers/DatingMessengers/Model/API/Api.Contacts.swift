@@ -33,10 +33,9 @@ extension Api.Contacts {
         /**
          * Get params for GET method.
          */
-        func getFilterParams(byName: String?, byAlias: String?) -> [String: String] {
+        func getFilterParams(byValue: String) -> [String: String] {
             var params: [String: String] = [:]
-            params["name"] = byName ?? ""
-            params["alias"] = byAlias ?? ""
+            params["value"] = byValue
             return params
         }
     }
@@ -67,30 +66,33 @@ extension Api.Contacts {
         }
     }
     
-    static func findContactByNameOrAlias(byName: String?, byAlias: String?, completion: @escaping Completion<[ContactDomain]>) {
+    /**
+     * Search contact by username or alias name.
+     */
+    static func findContactByNameOrAlias(byName: String?, completion: @escaping Completion<[ContactDomain]>) {
         
-        let urlString = self.QueryString().getUserContacts()
-        let requestParams = self.QueryParams().getFilterParams(byName: byName, byAlias: byAlias)
-        
-        api.request(method: .get, urlString: urlString, parameters: requestParams,
-                    headers: ApiManager().defaultHTTPHeaders) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let value):
-                    if let value = value as? JSArray {
-                        let contacts = Mapper<ContactDomain>().mapArray(JSONArray: value)
-                        completion(.success(contacts))
-                    } else {
-                        completion(.failure(Api.Error.json))
-                        return
+        if let byName = byName {
+            let urlString = self.QueryString().getUserContacts()
+            let requestParams = self.QueryParams().getFilterParams(byValue: byName)
+            
+            api.request(method: .get, urlString: urlString, parameters: requestParams,
+                        headers: ApiManager().defaultHTTPHeaders) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let value):
+                        if let value = value as? JSArray {
+                            let contacts = Mapper<ContactDomain>().mapArray(JSONArray: value)
+                            completion(.success(contacts))
+                        } else {
+                            completion(.failure(Api.Error.json))
+                            return
+                        }
+                    case .failure(let error):
+                        completion(.failure(error))
                     }
-                case .failure(let error):
-                    completion(.failure(error))
                 }
             }
         }
-        
-        
         completion(.success([]))
     }
 }

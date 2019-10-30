@@ -10,10 +10,10 @@ import Foundation
 
 final class SearchContactsViewModel {
     
-    var contacts: [ContactDomain]?
+    var contacts: [ContactDomain] = []
     
-    func searchUser(byName: String?, byAlias: String?, completion: @escaping APICompletion) {
-        Api.Contacts.findContactByNameOrAlias(byName: byName, byAlias: byAlias) { result in
+    func searchUser(by: String?, completion: @escaping APICompletion) {
+        Api.Contacts.findContactByNameOrAlias(byName: by) { result in
             switch result {
             case .success(let contactResult):
                 self.contacts = contactResult
@@ -23,5 +23,13 @@ final class SearchContactsViewModel {
             }
         }
         completion(.success)
+    }
+    
+    func numberOfRowsInSection() -> Int {
+        return contacts.count
+    }
+    
+    func cellModel(at: IndexPath) -> String {
+        return contacts[at.row].aliasName
     }
 }
