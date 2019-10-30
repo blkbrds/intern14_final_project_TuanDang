@@ -69,8 +69,26 @@ extension Api.Contacts {
     
     static func findContactByNameOrAlias(byName: String?, byAlias: String?, completion: @escaping Completion<[ContactDomain]>) {
         
-        let urlString = QueryString().getUserContacts()
+        let urlString = self.QueryString().getUserContacts()
+        let requestParams = self.QueryParams().getFilterParams(byName: byName, byAlias: byAlias)
         
+        api.request(method: .get, urlString: urlString, parameters: requestParams,
+                    headers: ApiManager().defaultHTTPHeaders) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let value):
+                    if let value = value as? JSArray {
+                        let contacts = Mapper<ContactDomain>().mapArray(JSONArray: value)
+                        completion(.success(contacts))
+                    } else {
+                        completion(.failure(Api.Error.json))
+                        return
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
         
         
         completion(.success([]))
