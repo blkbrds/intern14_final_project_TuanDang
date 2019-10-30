@@ -19,6 +19,26 @@ extension Api.Contacts {
         func getUserContacts() -> String {
             return Api.Path.baseURL + Api.Path.contactUrl + "/list"
         }
+        
+        /**
+         * Get API URL.
+         */
+        func searchContactByUserOrAlias() -> String {
+            return Api.Path.baseURL + Api.Path.contactUrl
+        }
+    }
+    
+    struct QueryParams {
+        
+        /**
+         * Get params for GET method.
+         */
+        func getFilterParams(byName: String?, byAlias: String?) -> [String: String] {
+            var params: [String: String] = [:]
+            params["name"] = byName ?? ""
+            params["alias"] = byAlias ?? ""
+            return params
+        }
     }
 
     /**
@@ -45,5 +65,14 @@ extension Api.Contacts {
                 }
             }
         }
+    }
+    
+    static func findContactByNameOrAlias(byName: String?, byAlias: String?, completion: @escaping Completion<[ContactDomain]>) {
+        
+        let urlString = QueryString().getUserContacts()
+        
+        
+        
+        completion(.success([]))
     }
 }

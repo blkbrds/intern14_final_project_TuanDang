@@ -122,7 +122,7 @@ extension ContactsViewController: UITableViewDataSource {
 
 extension ContactsViewController: SearchContactsViewDelegate {
     func addButtonClick(view: SearchContactsViewController, usersSelected usersId: [String]?) {
-        print("User id: \(String(describing: usersId?[0]))")
+        print("User id: \(usersId!)")
         print("close page")
     }
     

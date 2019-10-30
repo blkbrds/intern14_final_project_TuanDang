@@ -32,6 +32,7 @@
 		72AF06A223647228006EFC5C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF06A123647228006EFC5C /* RequestData.swift */; };
 		72C068B02369332600120E66 /* SearchContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C068AE2369332600120E66 /* SearchContactsViewController.swift */; };
 		72C068B12369332600120E66 /* SearchContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C068AF2369332600120E66 /* SearchContactsViewController.xib */; };
+		72C068B3236949FE00120E66 /* SearchContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C068B2236949FE00120E66 /* SearchContactsViewModel.swift */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -122,6 +123,7 @@
 		72AF06A123647228006EFC5C /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		72C068AE2369332600120E66 /* SearchContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContactsViewController.swift; sourceTree = "<group>"; };
 		72C068AF2369332600120E66 /* SearchContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchContactsViewController.xib; sourceTree = "<group>"; };
+		72C068B2236949FE00120E66 /* SearchContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContactsViewModel.swift; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			children = (
 				72C068AE2369332600120E66 /* SearchContactsViewController.swift */,
 				72C068AF2369332600120E66 /* SearchContactsViewController.xib */,
+				72C068B2236949FE00120E66 /* SearchContactsViewModel.swift */,
 			);
 			path = SearchContacts;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				72CD769A236337450066DEA9 /* UIViewControllerExt.swift in Sources */,
 				72CD76B523633BA70066DEA9 /* Button.swift in Sources */,
 				72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */,
+				72C068B3236949FE00120E66 /* SearchContactsViewModel.swift in Sources */,
 				72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */,
 				72CD76942363370A0066DEA9 /* InputViewExt.swift in Sources */,
 				72CD768E236336970066DEA9 /* RequestSerializer.swift in Sources */,

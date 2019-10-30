@@ -19,6 +19,8 @@ class SearchContactsViewController: UIViewController {
     @IBOutlet weak var userFoundTableView: UITableView!
     
     var delegate: SearchContactsViewDelegate?
+    private var usersSelected: [String]?
+    private var viewModel = SearchContactsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +43,29 @@ class SearchContactsViewController: UIViewController {
     func setupData() { }
 
     @IBAction func addFriendsButtonClick(_ sender: UIButton) {
-        delegate?.addButtonClick(view: self, usersSelected: ["testValue"])
+        delegate?.addButtonClick(view: self, usersSelected: usersSelected)
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelSearchButtonClick(_ sender: UIButton) {
-//        delegate?.cancelButtonClick(view: self)
+        delegate?.cancelButtonClick(view: self)
+        dismiss(animated: true, completion: nil)
     }
 }
 
 extension SearchContactsViewController: UISearchBarDelegate {
-   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-       searchBar.resignFirstResponder()
-       print("Start search")
-   }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        print("Start search")
+
+        viewModel.searchUser(byName: userSearchBar.text, byAlias: userSearchBar.text) { result in
+            switch result {
+            case .success:
+//                self.contactsTableView.reloadData()
+                break;
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
