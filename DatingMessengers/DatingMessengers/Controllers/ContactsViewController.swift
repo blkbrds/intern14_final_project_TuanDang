@@ -9,15 +9,13 @@
 import UIKit
 
 enum ContactIdentity: String {
-    case table
     case cell
     case nib
     
     var name: String {
         switch self {
-        case .table: return "ContactsTable"
         case .cell: return "ContactCell"
-        case .nib: return "ContactTableViewCell"
+        case .nib: return "ContactViewCell"
         }
     }
 }
@@ -43,7 +41,7 @@ class ContactsViewController: ViewController {
 
         // MARK: Load data from server.
         let nib = UINib(nibName: ContactIdentity.nib.name, bundle: nil)
-        contactsTableView.register(nib, forCellReuseIdentifier: ContactIdentity.table.name)
+        contactsTableView.register(nib, forCellReuseIdentifier: ContactIdentity.cell.name)
         contactsTableView.dataSource = self
         
         viewModel.getContacts { result in
