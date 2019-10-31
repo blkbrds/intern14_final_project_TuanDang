@@ -15,9 +15,9 @@ final class Api {
     
     struct Path {
         #if DEBUG
-            static let baseURL = "http://localhost:8080/ios"
+            static let baseURL = "http://localhost:8080/"
         #elseif STG
-            static let baseURL = "http://whoami.website/api/ios"
+            static let baseURL = "http://whoami.website:8080/"
         #endif
         
         static let scheduleUrl = "/schedule"
