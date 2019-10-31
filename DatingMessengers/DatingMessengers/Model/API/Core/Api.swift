@@ -14,12 +14,7 @@ final class Api {
     private init() { }
     
     struct Path {
-        #if DEBUG
-            static let baseURL = "http://localhost:8080/"
-        #elseif STG
-            static let baseURL = "http://whoami.website:8080/"
-        #endif
-        
+        static let baseURL = "http://whoami.website:8080"
         static let scheduleUrl = "/schedule"
         static let contactUrl = "/contact"
     }

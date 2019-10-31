@@ -44,27 +44,22 @@ class ContactsViewController: ViewController {
         contactsTableView.register(nib, forCellReuseIdentifier: ContactIdentity.cell.name)
         contactsTableView.dataSource = self
         
+        // MARK: 4. Mock action by Delegate.
+        viewModel.delegate = self
+        
+        // MARK: 0. Fetch data from Realm and display to table.
+        viewModel.fetchContactsToDisplay()
+
+        // MARK: 2. Create observe listening realm change.
+        viewModel.listeningRealmChange()
+
+        // MARK: 1. Fetch data from Server.
         viewModel.getContacts { result in
             switch result {
             case .success:
-                self.contactsTableView.reloadData()
+                print("Call to server success.")
             case .failure(let error):
                 print(error)
-            }
-        }
-        
-        // MARK: Create Realm Observe
-        viewModel.notificationToken = viewModel.originalContacts.observe { (result) in
-            switch result {
-            case .update(_, deletions: _, insertions: _, modifications: _):
-                self.contactsTableView.reloadData()
-                print("Display result update.")
-            case .initial(_):
-                self.contactsTableView.reloadData()
-                print("Display result initial.")
-                break
-            case .error(let error):
-                print(error.localizedDescription)
             }
         }
     }
@@ -108,4 +103,24 @@ extension ContactsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
     }
+}
+
+// MARK: 3. Action when realm changing.
+extension ContactsViewController: ContactsViewModelDelegate {
+    func realmChanging(listeningBy: ContactsViewModel, action: RealmAction) {
+        // MARK: Reload data when realm change.
+        switch action {
+        case .reloadTable:
+            print("Action reload table")
+        case .addNew:
+            print("Add new data from API")
+        case .update:
+            print("Update data from Realm")
+        default:
+            print("Other action")
+        }
+        self.contactsTableView.reloadData()
+    }
+    
+    
 }
