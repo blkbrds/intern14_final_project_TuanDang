@@ -126,7 +126,6 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         // Display current displayed in screen
         guard let visibleRows = contactsTableView.indexPathsForVisibleRows else { return }
-        print("Total cell reload: \(visibleRows.count)")
         viewModel.reloadImageForCell(cells: visibleRows)
     }
 }

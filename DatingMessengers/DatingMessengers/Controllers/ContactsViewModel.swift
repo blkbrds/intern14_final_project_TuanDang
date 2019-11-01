@@ -31,8 +31,6 @@ class ContactsViewModel {
 
     // MARK: 4. Mock action by Delegate.
     weak var delegate: ContactsViewModelDelegate?
-    
-    private var displayValue: [IndexPath]?
 
     var isNextPage = true
     var startPage = 0
@@ -148,7 +146,6 @@ class ContactsViewModel {
     }
     
     func reloadImageForCell(cells: [IndexPath]?) {
-        
     }
 
     
