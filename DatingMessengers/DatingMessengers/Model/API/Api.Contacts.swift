@@ -47,21 +47,12 @@ extension Api.Contacts {
         }
     }
     
-    static func dowloadImage(url: String, completion: @escaping Completion<Data?>) {
-        let imageUrl = URL(string:url)!
-        getData(from: imageUrl) { data, response, error in
-            if let data = data, error == nil {
-                print(response?.suggestedFilename ?? url.lastPathComponent)
-                print("Download Finished")
-                DispatchQueue.main.async() {
-                    completion(.success(data))
-                }
-            } else {
-                completion(.failure(error!))
-                return
-            }
-        }
-    }
+//    static func getDataFromUrl(url:String, completion: ((_ data: Data?) -> Void)) {
+//        URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+//            guard let data = data else { return }
+//            completion(Data(data))
+//        }.resume()
+//    }
     
     private static func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()

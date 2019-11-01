@@ -30,11 +30,10 @@ class ContactsViewModel {
     var contactsIndex: [String] = []
     var notificationToken: NotificationToken?
 
-    // MARK: 5.1. List cells displayed in tableView.
-    private var diplayedValue: [IndexPath] = []
-
     // MARK: 4. Mock action by Delegate.
     weak var delegate: ContactsViewModelDelegate?
+    
+    private var displayValue: [IndexPath]?
 
     var isNextPage = true
     var startPage = 0
@@ -75,7 +74,9 @@ class ContactsViewModel {
             switch result {
             case .success(let contactsResult):
                 let addedContacts = self.syncResponseDataWithRealm(data: contactsResult)
-                self.saveRealm(data: addedContacts)
+
+                // MARK: 2. Save new contacts to Realm.
+                RealmManager.shared.add(objects: addedContacts)
                     // MARK: Show error update to realm.
                     // completion(.failure(Api.Error.saveRealmNotSuccess))
                 completion(.success)
@@ -115,19 +116,6 @@ class ContactsViewModel {
         }
         return addedObjects
     }
-
-    // MARK: 2. Save new contacts to Realm.
-    private func saveRealm(data: [ContactDomain]) {
-        // Save OK.
-//        let realm = try! Realm()
-//        try! realm.write {
-//            for contact in data {
-//                realm.add(contact)
-//            }
-//        }
-        // MARK: Switch to Manager class.
-        RealmManager.shared.add(objects: data)
-    }
     
     // MARK: 3. Create observe listening realm change.
     func listeningRealmChange() {
@@ -146,51 +134,82 @@ class ContactsViewModel {
         })
     }
     
-    // MARK: 5. mark cells displayed in table.
-    func markDisplayedCell(displayed: [IndexPath]) {
-        print("Total cells marked are: \(displayed.count)")
-        diplayedValue = displayed
+    func downloadImages(displayed: [IndexPath]) {
+        for index in displayed {
+//            guard let dataImg = NSData(contentsOf: URL(string: contacts[index.section][index.row].imgUrl) ?? <#default value#>) else { return }
+            
+//            Api.Contacts.getDataFromUrl(url: contacts[index.section][index.row].imgUrl) { (data) in
+//                displayValue[index] = data
+//            }
+//            Api.Contacts.getImages(contacts[index.section][index.row].imgUrl) {
+//                result in
+//                switch result {
+//                case .success(let contactsResult):
+//                    print("Call successful. Result data is : \(contactsResult)")
+//                case .failure(let error):
+//                    print("Error \(error)")
+//                }
+//            }
+        }
     }
     
-    func downloadImages(displayed: [IndexPath]) {
-        
+    func markCellsLoaded(paths: [IndexPath]?) {
+        displayValue = paths
+    }
+    
+    func downloadImage(with indexPath: IndexPath, completion: @escaping (IndexPath, UIImage?) -> Void) {
+        let imageURL = contacts[indexPath.section][indexPath.row].imgUrl
+
+        URLSession.shared.dataTask(with: URL(string: imageURL)!) { (data, _, error) in
+            if let data = data, error == nil  {
+                let image = UIImage(data: data)
+                completion(indexPath, image)
+            } else {
+                completion(indexPath, nil)
+            }
+        }
     }
     
     // MARK: 6. Check and get reload cells.
-    func reloadCellsData(displayed: [IndexPath]) {
+    func reloadCellsData(displayed: [IndexPath]?) {
         
         var hasMarked = false
         var reloadCells = [IndexPath]()
+        print("Start reload cell")
+
+//        viewModel.downloadImage(with: indexPath) { (indexPath, image) in
+//            if let image = image {
+//                let cell = self.contactsTableView.cellForRow(at: indexPath) as? ContactViewCell
+//                cell?.avatarImageView.image = image
+//            } else {
+//                let cell = self.contactsTableView.cellForRow(at: indexPath) as? ContactViewCell
+//                cell?.avatarImageView.image = UIImage(named: "userImage")
+//            }
+//        }
         
         // MARK: Get cells keep data.
-        for reload in displayed {
-            for marked in diplayedValue {
-                if reload.row == marked.row && reload.section == marked.section {
-                    hasMarked = true
-                    break
-                }
-            }
-            if hasMarked == false {
-                reloadCells.append(reload)
-            }
-            hasMarked = false
-        }
-        
-        var reloadCellImage = [IndexPath: Data?]()
-        // MARK: Call API download image.
-        for indexPath in reloadCells {
-            Api.Contacts.dowloadImage(url: contacts[indexPath.section][indexPath.row].imgUrl) {
-                result in
-                switch result {
-                case .success(let contactsResult):
-                    reloadCellImage[indexPath] = contactsResult
-                case .failure(_):
-                    print("can not download.")
-                }
-            }
-        }
-        
-        print("Total downloaded are : \(reloadCellImage.count)")
+//        if let displayed = displayed, self.diplayedValue != nil {
+//            for reload in displayed {
+//                for marked in diplayedValue {
+//                    if reload.row == marked.row && reload.section == marked.section {
+//                        hasMarked = true
+//                        break
+//                    }
+//                }
+//                if hasMarked == false {
+//                    reloadCells.append(reload)
+//                }
+//                hasMarked = false
+//            }
+//
+//            var reloadCellImage = [IndexPath: Data?]()
+//            // MARK: Call API download image.
+//            for indexPath in reloadCells {
+//
+//            }
+//        }
+
+//        print("Total downloaded are : \(reloadCellImage.count)")
     }
     
     // MARK: Create contacts header group and contact index.
