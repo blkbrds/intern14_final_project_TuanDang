@@ -22,7 +22,6 @@ import RealmSwift
     dynamic var username: String = ""
     dynamic var aliasName: String = ""
     dynamic var imgUrl: String = ""
-    var imageView = UIImage(named: "userImage")
     
     // Detect primary key.
     static override func primaryKey() -> String? {

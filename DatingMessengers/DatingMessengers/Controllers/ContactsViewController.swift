@@ -63,10 +63,6 @@ class ContactsViewController: ViewController {
                 print(error)
             }
         }
-        
-        let indexPaths = contactsTableView.indexPathsForVisibleRows
-        viewModel.markCellsLoaded(paths: indexPaths)
-        downloadImages(paths: indexPaths)
     }
     
     
@@ -129,8 +125,7 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         // Display current displayed in screen
         guard let visibleRows = contactsTableView.indexPathsForVisibleRows else { return }
-        viewModel.reloadCellsData(displayed: visibleRows)
-        print("Total: \(visibleRows.count)")
+        print("Total cell reload: \(visibleRows.count)")
     }
 }
 
@@ -148,31 +143,8 @@ extension ContactsViewController: ContactsViewModelDelegate {
         default:
             print("Other action")
         }
+        let indexPaths = contactsTableView.indexPathsForVisibleRows
+        downloadImages(paths: indexPaths)
         self.contactsTableView.reloadData()
-        
-        // MARK: 4. Mark cells displayed in table.
-//        guard let contactView = contactsTableView else { return }
-//        viewModel.markDisplayedCell(displayed: contactView.indexPathsForVisibleRows ?? [])
-        print("display cells.")
-    }
-    
-    /**
-     * Reload image in cell changed.
-     */
-    func reloadCellImage(cells: [IndexPath : Data?]) {
-//        var cellReload = [IndexPath]()
-//        // MARK: Reload data.
-//        for path in cells {
-//            cellReload.append(path.key)
-//            guard let cell = self.contactsTableView.cellForRow(at: path.key) as? ContactViewCell else {
-//                return
-//            }
-//            guard let imageData = path.value else {
-//                cell.avatarImageView.image = UIImage(named: "userImage")
-//                return
-//            }
-//            cell.avatarImageView.image = UIImage(data: imageData)
-//        }
-//        self.contactsTableView.reloadRows(at: cellReload, with: .middle)
     }
 }
