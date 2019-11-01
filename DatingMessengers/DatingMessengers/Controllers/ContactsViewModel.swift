@@ -21,6 +21,7 @@ enum RealmAction {
 // MARK: Method called when realm changing.
 protocol ContactsViewModelDelegate: class {
     func realmChanging(listeningBy: ContactsViewModel, action: RealmAction)
+    func reloadCellImage(cells: [IndexPath: Data?])
 }
 
 class ContactsViewModel {
@@ -28,6 +29,9 @@ class ContactsViewModel {
     var contacts: [[ContactDomain]] = [[]]
     var contactsIndex: [String] = []
     var notificationToken: NotificationToken?
+
+    // MARK: 5.1. List cells displayed in tableView.
+    private var diplayedValue: [IndexPath] = []
 
     // MARK: 4. Mock action by Delegate.
     weak var delegate: ContactsViewModelDelegate?
@@ -142,6 +146,53 @@ class ContactsViewModel {
         })
     }
     
+    // MARK: 5. mark cells displayed in table.
+    func markDisplayedCell(displayed: [IndexPath]) {
+        print("Total cells marked are: \(displayed.count)")
+        diplayedValue = displayed
+    }
+    
+    func downloadImages(displayed: [IndexPath]) {
+        
+    }
+    
+    // MARK: 6. Check and get reload cells.
+    func reloadCellsData(displayed: [IndexPath]) {
+        
+        var hasMarked = false
+        var reloadCells = [IndexPath]()
+        
+        // MARK: Get cells keep data.
+        for reload in displayed {
+            for marked in diplayedValue {
+                if reload.row == marked.row && reload.section == marked.section {
+                    hasMarked = true
+                    break
+                }
+            }
+            if hasMarked == false {
+                reloadCells.append(reload)
+            }
+            hasMarked = false
+        }
+        
+        var reloadCellImage = [IndexPath: Data?]()
+        // MARK: Call API download image.
+        for indexPath in reloadCells {
+            Api.Contacts.dowloadImage(url: contacts[indexPath.section][indexPath.row].imgUrl) {
+                result in
+                switch result {
+                case .success(let contactsResult):
+                    reloadCellImage[indexPath] = contactsResult
+                case .failure(_):
+                    print("can not download.")
+                }
+            }
+        }
+        
+        print("Total downloaded are : \(reloadCellImage.count)")
+    }
+    
     // MARK: Create contacts header group and contact index.
     private func createContactsIndex(contactsData: [ContactDomain]) -> ([String], [[ContactDomain]]) {
         var tempData: [[ContactDomain]] = [[]]
@@ -149,20 +200,20 @@ class ContactsViewModel {
         // Create index by prefix animal name.
         tempData.remove(at: 0)
         for contactName in contactsData {
-                var foundPrefix = false
-                for prefix in 0..<tempIndex.count {
-                    if contactName.username.prefix(1).elementsEqual(tempIndex[prefix]) {
-                        tempData[prefix].append(contactName)
-                        foundPrefix = true
-                        break
-                    }
+            var foundPrefix = false
+            for prefix in 0..<tempIndex.count {
+                if contactName.username.prefix(1).elementsEqual(tempIndex[prefix]) {
+                    tempData[prefix].append(contactName)
+                    foundPrefix = true
+                    break
                 }
-                if foundPrefix == false {
-                    tempIndex.append(String(contactName.username.prefix(1)))
-                    var temp: [ContactDomain] = []
-                    temp.append(contactName)
-                    tempData.append(temp)
-                }
+            }
+            if foundPrefix == false {
+                tempIndex.append(String(contactName.username.prefix(1)))
+                var temp: [ContactDomain] = []
+                temp.append(contactName)
+                tempData.append(temp)
+            }
         }
         
         // Sort by Alphabe

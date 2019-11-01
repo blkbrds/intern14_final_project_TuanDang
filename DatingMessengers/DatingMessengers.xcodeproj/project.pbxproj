@@ -57,7 +57,6 @@
 		72F6448F23635F3400F8B538 /* ScheduleDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6448E23635F3400F8B538 /* ScheduleDomain.swift */; };
 		72F6449123635FF100F8B538 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6449023635FF100F8B538 /* Helper.swift */; };
 		72FDE77323674AA70011CBD8 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FDE77023674AA70011CBD8 /* ContactViewCell.swift */; };
-		72FDE77423674AA70011CBD8 /* userImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 72FDE77123674AA70011CBD8 /* userImage.png */; };
 		72FDE77523674AA70011CBD8 /* ContactViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDE77223674AA70011CBD8 /* ContactViewCell.xib */; };
 		72FDE77A23674AC90011CBD8 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FDE77623674AC90011CBD8 /* ContactsViewController.swift */; };
 		72FDE77B23674AC90011CBD8 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDE77723674AC90011CBD8 /* ContactsViewController.xib */; };
@@ -145,7 +144,6 @@
 		72F6448E23635F3400F8B538 /* ScheduleDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDomain.swift; sourceTree = "<group>"; };
 		72F6449023635FF100F8B538 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		72FDE77023674AA70011CBD8 /* ContactViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
-		72FDE77123674AA70011CBD8 /* userImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage.png; sourceTree = "<group>"; };
 		72FDE77223674AA70011CBD8 /* ContactViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactViewCell.xib; sourceTree = "<group>"; };
 		72FDE77623674AC90011CBD8 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		72FDE77723674AC90011CBD8 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
@@ -406,7 +404,6 @@
 			children = (
 				72FDE77023674AA70011CBD8 /* ContactViewCell.swift */,
 				72FDE77223674AA70011CBD8 /* ContactViewCell.xib */,
-				72FDE77123674AA70011CBD8 /* userImage.png */,
 				72FDE786236758F10011CBD8 /* ContactCellViewModel.swift */,
 			);
 			path = Cell;
@@ -623,7 +620,6 @@
 			files = (
 				72FDE77523674AA70011CBD8 /* ContactViewCell.xib in Resources */,
 				72A47E2C236352C400F807C8 /* MessagesViewController.xib in Resources */,
-				72FDE77423674AA70011CBD8 /* userImage.png in Resources */,
 				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
 				72FDE77B23674AC90011CBD8 /* ContactsViewController.xib in Resources */,
 				72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */,

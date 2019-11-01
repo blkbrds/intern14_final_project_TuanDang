@@ -43,17 +43,18 @@ class ContactsViewController: ViewController {
         let nib = UINib(nibName: ContactIdentity.nib.name, bundle: nil)
         contactsTableView.register(nib, forCellReuseIdentifier: ContactIdentity.cell.name)
         contactsTableView.dataSource = self
+        contactsTableView.delegate = self
         
-        // MARK: 4. Mock action by Delegate.
+        // MARK: 0. Mock action by Delegate.
         viewModel.delegate = self
         
-        // MARK: 0. Fetch data from Realm and display to table.
+        // MARK: 1. Fetch data from Realm and display to table.
         viewModel.fetchContactsToDisplay()
 
         // MARK: 2. Create observe listening realm change.
         viewModel.listeningRealmChange()
 
-        // MARK: 1. Fetch data from Server.
+        // MARK: 3. Fetch data from Server.
         viewModel.getContacts { result in
             switch result {
             case .success:
@@ -62,10 +63,14 @@ class ContactsViewController: ViewController {
                 print(error)
             }
         }
+        
+        // MARK: Download image
+        guard let visibleRows = contactsTableView.indexPathsForVisibleRows else { return }
+        viewModel.downloadImages(displayed: visibleRows)
     }
 }
 
-extension ContactsViewController: UITableViewDataSource {
+extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
@@ -80,6 +85,9 @@ extension ContactsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.viewModel = viewModel.getCellModel(at: indexPath)
+//        MARK: Get image at cell and reload.
+//        cell.avatarImageView.image = images![indexPath.item]
+//        cell.reloadData()
         return cell
     }
     
@@ -103,6 +111,13 @@ extension ContactsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // Display current displayed in screen
+        guard let visibleRows = contactsTableView.indexPathsForVisibleRows else { return }
+//        viewModel.reloadCellsData(displayed: visibleRows)
+        print("Total: \(visibleRows.count)")
+    }
 }
 
 // MARK: 3. Action when realm changing.
@@ -120,7 +135,30 @@ extension ContactsViewController: ContactsViewModelDelegate {
             print("Other action")
         }
         self.contactsTableView.reloadData()
+        
+        // MARK: 4. Mark cells displayed in table.
+        guard let contactView = contactsTableView else { return }
+        viewModel.markDisplayedCell(displayed: contactView.indexPathsForVisibleRows ?? [])
+        print("display cells.")
     }
     
-    
+    /**
+     * Reload image in cell changed.
+     */
+    func reloadCellImage(cells: [IndexPath : Data?]) {
+        var cellReload = [IndexPath]()
+        // MARK: Reload data.
+        for path in cells {
+            cellReload.append(path.key)
+            guard let cell = self.contactsTableView.cellForRow(at: path.key) as? ContactViewCell else {
+                return
+            }
+            guard let imageData = path.value else {
+                cell.avatarImageView.image = UIImage(named: "userImage")
+                return
+            }
+            cell.avatarImageView.image = UIImage(data: imageData)
+        }
+        self.contactsTableView.reloadRows(at: cellReload, with: .middle)
+    }
 }
