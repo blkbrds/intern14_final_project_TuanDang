@@ -127,22 +127,30 @@ class ContactsViewModel {
         })
     }
     
+    // MARK: re-write func download images.
     func downloadImage(with indexPath: IndexPath, completion: @escaping (IndexPath, UIImage?) -> Void) {
         
-        let imageURL = contacts[indexPath.section][indexPath.row].imgUrl
-        let urlRequest = URLRequest(url: URL(string: imageURL)!)
-        URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
-            if error != nil {
-                print("Error content: \(error!)")
+        let imageURL = URL(string: contacts[indexPath.section][indexPath.row].imgUrl)
+        URLSession.shared.dataTask(with: imageURL!) { data, response, error in
+            if
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data) {
+                DispatchQueue.main.async() {
+                    completion(indexPath, image)
+                }
             }
-            if let data = data {
-                let image = UIImage(data: data)
-                completion(indexPath, image)
-            } else {
+            DispatchQueue.main.async() {
                 completion(indexPath, nil)
             }
-        }
+        }.resume()
     }
+    
+    func reloadImageForCell(cells: [IndexPath]?) {
+        
+    }
+
     
     // MARK: Create contacts header group and contact index.
     private func createContactsIndex(contactsData: [ContactDomain]) -> ([String], [[ContactDomain]]) {

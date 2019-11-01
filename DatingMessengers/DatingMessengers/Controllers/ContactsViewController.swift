@@ -70,12 +70,13 @@ class ContactsViewController: ViewController {
         if let paths = paths {
             for indexPath in paths {
                 viewModel.downloadImage(with: indexPath) { (indexPath, image) in
+                    guard let cell = self.contactsTableView.dequeueReusableCell(withIdentifier: ContactIdentity.cell.name, for: indexPath) as? ContactViewCell else {
+                        return
+                    }
                     if let image = image {
-                        let cell = self.contactsTableView.cellForRow(at: indexPath) as? ContactViewCell
-                        cell?.avatarImageView.image = image
+                        cell.avatarImageView.image = image
                     } else {
-                        let cell = self.contactsTableView.cellForRow(at: indexPath) as? ContactViewCell
-                        cell?.avatarImageView.image = UIImage(named: "userImage")
+                        cell.avatarImageView.image = UIImage(named: "userImage")
                     }
                 }
             }
@@ -126,6 +127,7 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
         // Display current displayed in screen
         guard let visibleRows = contactsTableView.indexPathsForVisibleRows else { return }
         print("Total cell reload: \(visibleRows.count)")
+        viewModel.reloadImageForCell(cells: visibleRows)
     }
 }
 
