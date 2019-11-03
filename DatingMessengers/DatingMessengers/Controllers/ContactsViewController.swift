@@ -65,6 +65,9 @@ class ContactsViewController: ViewController {
         }
     }
     
+    @IBAction func addContactButtonClick(_ sender: UIBarButtonItem) {
+        
+    }
     
     func downloadImages(paths: [IndexPath]?) {
         if let paths = paths {
