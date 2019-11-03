@@ -11,9 +11,9 @@ import Foundation
 final class SearchContactsViewModel {
     
     var contacts: [ContactDomain] = []
+    private var addedContacts = [ContactDomain]()
     
     func searchUser(by: String?, completion: @escaping APICompletion) {
-        print("search content: \(by)")
         Api.Contacts.findContactByNameOrAlias(byName: by) { result in
             switch result {
             case .success(let contactResult):
@@ -32,5 +32,30 @@ final class SearchContactsViewModel {
     
     func cellModel(at: IndexPath) -> String {
         return contacts[at.row].aliasName
+    }
+
+    func getCellModel(at: Int) -> ContactCellViewModel {
+        return ContactCellViewModel(contact: contacts[at])
+    }
+    
+    func addContact(contact: ContactDomain) {
+        addedContacts.append(contact)
+    }
+    
+    func removeContact(id: String) {
+        for contact in addedContacts {
+            if contact.id.elementsEqual(id) {
+                let _ = addedContacts.remove(contact)
+            }
+        }
+    }
+    
+    /**
+     * Update contact to DB.
+     */
+    func addFriends() {
+        if addedContacts.count > 0 {
+            RealmManager.shared.add(objects: addedContacts)
+        }
     }
 }

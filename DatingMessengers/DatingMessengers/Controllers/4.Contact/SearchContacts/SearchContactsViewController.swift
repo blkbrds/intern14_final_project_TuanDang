@@ -33,7 +33,8 @@ class SearchContactsViewController: UIViewController {
      * Required method to setting layout.
      */
     func setupUI() {
-        userFoundTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Myidentity")
+        let nib = UINib(nibName: "ContactViewCell", bundle: nil)
+        userFoundTableView.register(nib, forCellReuseIdentifier: "Myidentity")
         userFoundTableView.dataSource = self
 
         userSearchBar.returnKeyType = .search
@@ -47,6 +48,7 @@ class SearchContactsViewController: UIViewController {
 
     @IBAction func addFriendsButtonClick(_ sender: UIButton) {
         delegate?.addButtonClick(view: self, usersSelected: usersSelected)
+        viewModel.addFriends()
         dismiss(animated: true, completion: nil)
     }
     
@@ -59,9 +61,6 @@ class SearchContactsViewController: UIViewController {
 extension SearchContactsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        print("Start search")
-        print("search by user: \(userSearchBar.text ?? "empty")")
-
         viewModel.searchUser(by: userSearchBar.text) { result in
             switch result {
             case .success:
@@ -81,10 +80,21 @@ extension SearchContactsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Myidentity", for: indexPath)
-        cell.textLabel?.text = viewModel.cellModel(at: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Myidentity", for: indexPath) as? ContactViewCell else {
+            return ContactViewCell()
+        }
+        cell.viewModel = viewModel.getCellModel(at: indexPath.row)
+
         return cell
     }
+}
+
+extension SearchContactsViewController: ContactsSearchedViewCellDelegate {
+    func markContactAdd(view: ContactsSearchedViewCell, contact: ContactDomain) {
+        viewModel.addContact(contact: contact)
+    }
     
-    
+    func markContactRemove(view: ContactsSearchedViewCell, id: String) {
+        viewModel.removeContact(id: id)
+    }
 }

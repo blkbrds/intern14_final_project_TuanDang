@@ -33,6 +33,8 @@
 		72B37DDD236E93D40030D1B2 /* SearchContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B37DDA236E93D40030D1B2 /* SearchContactsViewModel.swift */; };
 		72B37DDE236E93D40030D1B2 /* SearchContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B37DDB236E93D40030D1B2 /* SearchContactsViewController.swift */; };
 		72B37DDF236E93D40030D1B2 /* SearchContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B37DDC236E93D40030D1B2 /* SearchContactsViewController.xib */; };
+		72B37DE6236EA8B90030D1B2 /* ContactsSearchedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B37DE4236EA8B90030D1B2 /* ContactsSearchedViewCell.swift */; };
+		72B37DE7236EA8B90030D1B2 /* ContactsSearchedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B37DE5236EA8B90030D1B2 /* ContactsSearchedViewCell.xib */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -123,6 +125,8 @@
 		72B37DDA236E93D40030D1B2 /* SearchContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContactsViewModel.swift; sourceTree = "<group>"; };
 		72B37DDB236E93D40030D1B2 /* SearchContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContactsViewController.swift; sourceTree = "<group>"; };
 		72B37DDC236E93D40030D1B2 /* SearchContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchContactsViewController.xib; sourceTree = "<group>"; };
+		72B37DE4236EA8B90030D1B2 /* ContactsSearchedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsSearchedViewCell.swift; sourceTree = "<group>"; };
+		72B37DE5236EA8B90030D1B2 /* ContactsSearchedViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsSearchedViewCell.xib; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -422,6 +426,8 @@
 				72FDE77023674AA70011CBD8 /* ContactViewCell.swift */,
 				72FDE77223674AA70011CBD8 /* ContactViewCell.xib */,
 				72FDE786236758F10011CBD8 /* ContactCellViewModel.swift */,
+				72B37DE4236EA8B90030D1B2 /* ContactsSearchedViewCell.swift */,
+				72B37DE5236EA8B90030D1B2 /* ContactsSearchedViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 			files = (
 				72FDE77523674AA70011CBD8 /* ContactViewCell.xib in Resources */,
 				72A47E2C236352C400F807C8 /* MessagesViewController.xib in Resources */,
+				72B37DE7236EA8B90030D1B2 /* ContactsSearchedViewCell.xib in Resources */,
 				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
 				72FDE77B23674AC90011CBD8 /* ContactsViewController.xib in Resources */,
 				72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */,
@@ -781,6 +788,7 @@
 				720E736C236822E8009092A9 /* RealmManager.swift in Sources */,
 				72CD767E236335C90066DEA9 /* App.swift in Sources */,
 				72A47E1B236351D400F807C8 /* TabbarViewController.swift in Sources */,
+				72B37DE6236EA8B90030D1B2 /* ContactsSearchedViewCell.swift in Sources */,
 				72CD76B123633B560066DEA9 /* TableCell.swift in Sources */,
 				72CD76BF236348AC0066DEA9 /* Api.Maps.swift in Sources */,
 				72F6449123635FF100F8B538 /* Helper.swift in Sources */,

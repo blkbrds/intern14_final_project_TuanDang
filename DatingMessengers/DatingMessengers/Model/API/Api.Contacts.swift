@@ -70,7 +70,6 @@ extension Api.Contacts {
      * Search contact by username or alias name.
      */
     static func findContactByNameOrAlias(byName: String?, completion: @escaping Completion<[ContactDomain]>) {
-        print("Parameter value: \(byName ?? "empty value")")
         if let byName = byName {
             let urlString = self.QueryString().searchContactByUserOrAlias()
             let requestParams = self.QueryParams().getFilterParams(byValue: byName)
@@ -81,7 +80,6 @@ extension Api.Contacts {
                     switch result {
                     case .success(let value):
                         if let value = value as? JSArray {
-                            print("Response value: \(value)")
                             let contacts = Mapper<ContactDomain>().mapArray(JSONArray: value)
                             completion(.success(contacts))
                         } else {
