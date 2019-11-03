@@ -66,7 +66,13 @@ class ContactsViewController: ViewController {
     }
     
     @IBAction func addContactButtonClick(_ sender: UIBarButtonItem) {
-        
+        let searchUserView = SearchContactsViewController()
+        searchUserView.delegate = self
+        searchUserView.modalPresentationStyle = .overFullScreen
+        searchUserView.modalTransitionStyle = .coverVertical
+        self.present(searchUserView, animated: true, completion: {
+            // MARK: Do something.
+        })
     }
     
     func downloadImages(paths: [IndexPath]?) {
@@ -150,5 +156,17 @@ extension ContactsViewController: ContactsViewModelDelegate {
         let indexPaths = contactsTableView.indexPathsForVisibleRows
         downloadImages(paths: indexPaths)
         self.contactsTableView.reloadData()
+    }
+}
+
+extension ContactsViewController: SearchContactsViewDelegate {
+    func addButtonClick(view: SearchContactsViewController, usersSelected usersId: [String]?) {
+        if let user = usersId {
+            print("User id: \(user)")
+            print("close page")
+        }
+    }
+    func cancelButtonClick(view: SearchContactsViewController) {
+        view.dismiss(animated: true, completion: nil)
     }
 }

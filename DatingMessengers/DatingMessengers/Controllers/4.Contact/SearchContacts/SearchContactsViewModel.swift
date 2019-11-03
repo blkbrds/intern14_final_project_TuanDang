@@ -13,6 +13,7 @@ final class SearchContactsViewModel {
     var contacts: [ContactDomain] = []
     
     func searchUser(by: String?, completion: @escaping APICompletion) {
+        print("search content: \(by)")
         Api.Contacts.findContactByNameOrAlias(byName: by) { result in
             switch result {
             case .success(let contactResult):

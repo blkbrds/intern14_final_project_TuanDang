@@ -60,6 +60,7 @@ extension SearchContactsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         print("Start search")
+        print("search by user: \(userSearchBar.text ?? "empty")")
 
         viewModel.searchUser(by: userSearchBar.text) { result in
             switch result {

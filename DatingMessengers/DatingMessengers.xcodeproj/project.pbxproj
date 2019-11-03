@@ -30,6 +30,9 @@
 		72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */; };
 		72AF069E23645847006EFC5C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF069D23645847006EFC5C /* ResponseData.swift */; };
 		72AF06A223647228006EFC5C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AF06A123647228006EFC5C /* RequestData.swift */; };
+		72B37DDD236E93D40030D1B2 /* SearchContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B37DDA236E93D40030D1B2 /* SearchContactsViewModel.swift */; };
+		72B37DDE236E93D40030D1B2 /* SearchContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B37DDB236E93D40030D1B2 /* SearchContactsViewController.swift */; };
+		72B37DDF236E93D40030D1B2 /* SearchContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B37DDC236E93D40030D1B2 /* SearchContactsViewController.xib */; };
 		72CD767E236335C90066DEA9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767D236335C90066DEA9 /* App.swift */; };
 		72CD7680236335E20066DEA9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD767F236335E20066DEA9 /* String.swift */; };
 		72CD7682236335EE0066DEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD7681236335EE0066DEA9 /* Color.swift */; };
@@ -117,6 +120,9 @@
 		72AF069923643BE2006EFC5C /* ScheduleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellViewModel.swift; sourceTree = "<group>"; };
 		72AF069D23645847006EFC5C /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		72AF06A123647228006EFC5C /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		72B37DDA236E93D40030D1B2 /* SearchContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContactsViewModel.swift; sourceTree = "<group>"; };
+		72B37DDB236E93D40030D1B2 /* SearchContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContactsViewController.swift; sourceTree = "<group>"; };
+		72B37DDC236E93D40030D1B2 /* SearchContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchContactsViewController.xib; sourceTree = "<group>"; };
 		72CD767D236335C90066DEA9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		72CD767F236335E20066DEA9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		72CD7681236335EE0066DEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -271,6 +277,16 @@
 			path = DataAPI;
 			sourceTree = "<group>";
 		};
+		72B37DD9236E93D40030D1B2 /* SearchContacts */ = {
+			isa = PBXGroup;
+			children = (
+				72B37DDA236E93D40030D1B2 /* SearchContactsViewModel.swift */,
+				72B37DDB236E93D40030D1B2 /* SearchContactsViewController.swift */,
+				72B37DDC236E93D40030D1B2 /* SearchContactsViewController.xib */,
+			);
+			path = SearchContacts;
+			sourceTree = "<group>";
+		};
 		72CD5EB52363EFDF00972BE0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +410,7 @@
 		72CD76A0236338950066DEA9 /* 4.Contact */ = {
 			isa = PBXGroup;
 			children = (
+				72B37DD9236E93D40030D1B2 /* SearchContacts */,
 				72CD76A12363389E0066DEA9 /* Cell */,
 			);
 			path = 4.Contact;
@@ -623,6 +640,7 @@
 				720C27722363001B00BBE05B /* LaunchScreen.storyboard in Resources */,
 				72FDE77B23674AC90011CBD8 /* ContactsViewController.xib in Resources */,
 				72A47E342363530800F807C8 /* SchedulesViewController.xib in Resources */,
+				72B37DDF236E93D40030D1B2 /* SearchContactsViewController.xib in Resources */,
 				72CD76C323634C3B0066DEA9 /* Default-568h@2x.png in Resources */,
 				72A47E1C236351D400F807C8 /* TabbarViewController.xib in Resources */,
 				720C276F2363001B00BBE05B /* Assets.xcassets in Resources */,
@@ -778,6 +796,7 @@
 				72FDE787236758F10011CBD8 /* ContactCellViewModel.swift in Sources */,
 				72CD769A236337450066DEA9 /* UIViewControllerExt.swift in Sources */,
 				72CD76B523633BA70066DEA9 /* Button.swift in Sources */,
+				72B37DDE236E93D40030D1B2 /* SearchContactsViewController.swift in Sources */,
 				72AF069A23643BE2006EFC5C /* ScheduleCellViewModel.swift in Sources */,
 				72A47E372363538500F807C8 /* PersonalViewController.swift in Sources */,
 				72CD76942363370A0066DEA9 /* InputViewExt.swift in Sources */,
@@ -788,6 +807,7 @@
 				72A1F361236C953C009383B0 /* UIImageExt.swift in Sources */,
 				72CD76BB2363488A0066DEA9 /* Api.Schedules.swift in Sources */,
 				72CD76C1236348B90066DEA9 /* Api.Personally.swift in Sources */,
+				72B37DDD236E93D40030D1B2 /* SearchContactsViewModel.swift in Sources */,
 				72CD76B323633B860066DEA9 /* CollectionCell.swift in Sources */,
 				72CD7682236335EE0066DEA9 /* Color.swift in Sources */,
 				72CD7698236337300066DEA9 /* StringExt.swift in Sources */,
