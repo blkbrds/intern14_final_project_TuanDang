@@ -1,8 +1,8 @@
 //
-//  UIImageViewExt.swift
+//  UIImageExt.swift
 //  DatingMessengers
 //
-//  Created by MBA0051 on 10/29/19.
+//  Created by MBA0051 on 11/1/19.
 //  Copyright © 2019 MBA0051. All rights reserved.
 //
 
@@ -29,3 +29,4 @@ extension UIImageView {
         dowloadFromServer(url: url, contentMode: mode)
     }
 }
+

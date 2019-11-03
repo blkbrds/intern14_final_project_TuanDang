@@ -43,44 +43,51 @@ class ContactsViewController: ViewController {
         let nib = UINib(nibName: ContactIdentity.nib.name, bundle: nil)
         contactsTableView.register(nib, forCellReuseIdentifier: ContactIdentity.cell.name)
         contactsTableView.dataSource = self
+        contactsTableView.delegate = self
         
+        // MARK: 0. Mock action by Delegate.
+        viewModel.delegate = self
+        
+        // MARK: 1. Fetch data from Realm and display to table.
+        viewModel.fetchContactsToDisplay()
+
+        // MARK: 2. Create observe listening realm change.
+        viewModel.listeningRealmChange()
+
+        // MARK: 3. Fetch data from Server.
         viewModel.getContacts { result in
             switch result {
             case .success:
-                self.contactsTableView.reloadData()
+                print("Call to server success.")
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    @IBAction func addContactButtonClick(_ sender: UIBarButtonItem) {
         
-        // MARK: Create Realm Observe
-        viewModel.notificationToken = viewModel.originalContacts.observe { (result) in
-            switch result {
-            case .update(_, deletions: _, insertions: _, modifications: _):
-                self.contactsTableView.reloadData()
-                print("Display result update.")
-            case .initial(_):
-                self.contactsTableView.reloadData()
-                print("Display result initial.")
-                break
-            case .error(let error):
-                print(error.localizedDescription)
+    }
+    
+    func downloadImages(paths: [IndexPath]?) {
+        if let paths = paths {
+            for indexPath in paths {
+                viewModel.downloadImage(with: indexPath) { (indexPath, image) in
+                    guard let cell = self.contactsTableView.dequeueReusableCell(withIdentifier: ContactIdentity.cell.name, for: indexPath) as? ContactViewCell else {
+                        return
+                    }
+                    if let image = image {
+                        cell.avatarImageView.image = image
+                    } else {
+                        cell.avatarImageView.image = UIImage(named: "userImage")
+                    }
+                }
             }
         }
     }
-
-    @IBAction func addContactButtonClick(_ sender: UIButton) {
-        let searchUserView = SearchContactsViewController()
-        searchUserView.delegate = self
-        searchUserView.modalPresentationStyle = .overFullScreen
-        searchUserView.modalTransitionStyle = .coverVertical
-        self.present(searchUserView, animated: true, completion: {
-            // MARK: Do something.
-        })
-    }
 }
 
-extension ContactsViewController: UITableViewDataSource {
+extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
@@ -118,18 +125,30 @@ extension ContactsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // Display current displayed in screen
+        guard let visibleRows = contactsTableView.indexPathsForVisibleRows else { return }
+        viewModel.reloadImageForCell(cells: visibleRows)
+    }
 }
 
-extension ContactsViewController: SearchContactsViewDelegate {
-    func addButtonClick(view: SearchContactsViewController, usersSelected usersId: [String]?) {
-        if let user = usersId {
-            print("User id: \(user)")
-            print("close page")
+// MARK: 3. Action when realm changing.
+extension ContactsViewController: ContactsViewModelDelegate {
+    func realmChanging(listeningBy: ContactsViewModel, action: RealmAction) {
+        // MARK: Reload data when realm change.
+        switch action {
+        case .reloadTable:
+            print("Action reload table")
+        case .addNew:
+            print("Add new data from API")
+        case .update:
+            print("Update data from Realm")
+        default:
+            print("Other action")
         }
-
-    }
-    
-    func cancelButtonClick(view: SearchContactsViewController) {
-        view.dismiss(animated: true, completion: nil)
+        let indexPaths = contactsTableView.indexPathsForVisibleRows
+        downloadImages(paths: indexPaths)
+        self.contactsTableView.reloadData()
     }
 }
