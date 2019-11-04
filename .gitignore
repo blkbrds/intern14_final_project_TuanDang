@@ -2,3 +2,10 @@
 Pods/
 Pods
 /Pods/
+
+*.xcworkspace
+*.xcuserdatad
+/xcuserdata/
+xcuserdata
+xcuserdata/
+/xcuserdata
