@@ -15,10 +15,16 @@ protocol ContactsSearchedViewCellDelegate: class {
 
 class ContactsSearchedViewCell: UITableViewCell {
 
-    @IBOutlet weak var contactDetailViewCell: ContactViewCell!
     @IBOutlet weak var markStatusButton: UIButton!
     weak var delegate: ContactsSearchedViewCellDelegate?
     private var markStatus = false;
+    var viewModel: ContactCellViewModel? {
+        didSet {
+            if let viewModel = viewModel {
+                // MARK: todo
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,11 +40,13 @@ class ContactsSearchedViewCell: UITableViewCell {
     @IBAction func markFriendAddedButtonClick(_ sender: UIButton) {
         if markStatus == true {
             markStatusButton.setImage(UIImage(named: "remove-button-md"), for: .normal)
+            markStatus = false
             // Add image to list.
-            delegate?.markContactAdd(view: self,contact: ContactDomain(id: contactDetailViewCell.viewModel!.id, username: contactDetailViewCell.viewModel!.username, alias: contactDetailViewCell.viewModel!.aliasName, img: contactDetailViewCell.viewModel!.imgUrl))
+//            delegate?.markContactAdd(view: self,contact: ContactDomain(id: contactDetailViewCell.viewModel!.id, username: contactDetailViewCell.viewModel!.username, alias: contactDetailViewCell.viewModel!.aliasName, img: contactDetailViewCell.viewModel!.imgUrl))
         } else {
             markStatusButton.setImage(UIImage(named: "add-button-md"), for: .normal)
-            delegate?.markContactRemove(view: self, id: contactDetailViewCell.viewModel!.id)
+            markStatus = true
+//            delegate?.markContactRemove(view: self, id: contactDetailViewCell.viewModel!.id)
         }
     }
 }

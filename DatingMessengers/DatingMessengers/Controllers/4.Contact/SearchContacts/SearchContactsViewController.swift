@@ -33,7 +33,7 @@ class SearchContactsViewController: UIViewController {
      * Required method to setting layout.
      */
     func setupUI() {
-        let nib = UINib(nibName: "ContactViewCell", bundle: nil)
+        let nib = UINib(nibName: "ContactsSearchedViewCell", bundle: nil)
         userFoundTableView.register(nib, forCellReuseIdentifier: "Myidentity")
         userFoundTableView.dataSource = self
 
@@ -80,7 +80,7 @@ extension SearchContactsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Myidentity", for: indexPath) as? ContactViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Myidentity", for: indexPath) as? ContactsSearchedViewCell else {
             return ContactViewCell()
         }
         cell.viewModel = viewModel.getCellModel(at: indexPath.row)
